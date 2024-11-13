@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-
     public Joystick movementJoystick;
     public float moveSpeed = 5.0f;
 
-    private Rigidbody2D rigidBody;
-/*
-    private Animator animator;
-*/
+    public GameObject idlePrefab;
+    public GameObject runningPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>(); 
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+
+        //idlePrefab = Instantiate(myPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        idlePrefab.SetActive(true);
+        //runningPrefab = Instantiate(myPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        runningPrefab.SetActive(false);
     }
 
 
@@ -26,7 +28,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 inputDirection = movementJoystick.Direction;
         if(inputDirection != new Vector2(0f, 0f)){
-            //animator.SetInteger("player_animation_state", (int) PlayerAnimationState.Walking);
+            animator.SetInteger("player_animation_state", (int) PlayerAnimationState.Walking);
+
+            idlePrefab.SetActive(false);
+            runningPrefab.SetActive(true);
 
             int facingDirection = -1;
             if(inputDirection.x < 0) {
@@ -34,7 +39,9 @@ public class PlayerMovement : MonoBehaviour
             }
             transform.localScale = new Vector3(facingDirection, 1f, 1f);
         }else {
-            //animator.SetInteger("player_animation_state", (int) PlayerAnimationState.Idle);
+            animator.SetInteger("player_animation_state", (int) PlayerAnimationState.Idle);
+            idlePrefab.SetActive(true);
+            runningPrefab.SetActive(false);
         }
     }
 
@@ -45,6 +52,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    //MARK: Private
+
+    private Rigidbody2D rigidBody;
+    private Animator animator;
+    
     private enum PlayerAnimationState {
         Idle = 0,
         Walking = 1
