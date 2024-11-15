@@ -43,12 +43,28 @@ public class PlayerController : MonoBehaviour
             idlePrefab.SetActive(true);
             runningPrefab.SetActive(false);
         }
+
+        //Raycast to check Start game door collider
+        Debug.DrawRay(transform.position, Vector3.up * 1f, Color.red);
+        if(Physics2D.Raycast(transform.position, Vector3.up, 1f)){
+           // Debug.Log("STM - Raycast activated");
+        }
     }
 
     void FixedUpdate()
     {
         Vector2 inputDirection = movementJoystick.Direction;
         rigidBody.velocity = inputDirection * moveSpeed;   
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        StartGameDoorController doorController = collision.collider.GetComponent<StartGameDoorController>();
+        if(doorController != null){
+            Debug.Log("STM - puerta");
+        } else {
+            Debug.Log("STM - NO puerta");
+        }
     }
 
 
