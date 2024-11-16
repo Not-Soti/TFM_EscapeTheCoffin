@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartGameDoorController : MonoBehaviour
 {
@@ -15,4 +16,14 @@ public class StartGameDoorController : MonoBehaviour
     {
         
     }
+
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        PlayerController playerController = collision.collider.GetComponent<PlayerController>();
+        if(playerController != null){
+            SceneManager.LoadScene("Level1");
+        }
+    }
+
 }
