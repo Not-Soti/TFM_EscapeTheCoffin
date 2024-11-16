@@ -6,7 +6,7 @@ using System.Linq;
 public class MapController : MonoBehaviour
 {
 
-    public GameObject[] roomPrefabs; //Room prefabs used to build the level
+    public List<GameObject> roomPrefabs; //Room prefabs used to build the level
     
     private List<GameObject> levelRooms; //Rooms that conform the level
 
@@ -19,16 +19,27 @@ public class MapController : MonoBehaviour
         //Create map
         for (int i = 0; i < numberOfRooms; i++)
         {
-            int roomToInstantiate = Random.Range(0, roomPrefabs.Length);
-            levelRooms.Insert(i, roomPrefabs[roomToInstantiate]);
+            int roomToInstantiate = Random.Range(0, roomPrefabs.Count);
+            levelRooms.Insert(i, roomPrefabs.ElementAt(roomToInstantiate));
         }
 
+        instantiateRooms();
+        
+    }
 
-        //Instantiate the map
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void instantiateRooms(){
+                //Instantiate the map
         for (int i = 0; i < levelRooms.Count; i++)
         {
             GameObject actualRoom = Instantiate(levelRooms.ElementAt(i), new Vector3(0,0,0), Quaternion.identity);
-
+ 
+            //Place rooms relative to the previous one
             if(i > 0)
             {
                 GameObject previousRoom = levelRooms.ElementAt(i-1);
@@ -43,18 +54,10 @@ public class MapController : MonoBehaviour
                     Mathf.Abs(previousRoomDistanceCenterToLeftDoor.y) + Mathf.Abs(actualRoomDistanceCenterToRightDoor.y),
                     0
                 ) + previousRoom.transform.position;
-                Debug.LogFormat("STM - \npreviousRoomDistanceCenterToLeftDoor = {0} \nactualRoomDistanceCenterToRightDoor = {1} \nnewPosition = {2}", previousRoomDistanceCenterToLeftDoor, actualRoomDistanceCenterToRightDoor, newPosition);
                 actualRoom.transform.position = newPosition;
             }
             
             levelRooms[i] = actualRoom;
         }
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
