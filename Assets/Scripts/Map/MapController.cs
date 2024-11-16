@@ -9,6 +9,10 @@ public class MapController : MonoBehaviour
     public List<GameObject> availableRoomPrefabs; //Room prefabs used to build the level
     public int roomGeneratingDeepness;
     private List<Room> availableRooms;
+
+    // Stores the map as a matrix, storing the relative coordinates of the matrix where
+    // a room is and its value.
+    private Dictionary<Vector2Int, Room> placedRooms;
     
     //private List<GameObject> levelRooms; //Rooms that conform the level
     //private List<Room> levelRooms; //Rooms that conform the level
@@ -17,25 +21,21 @@ public class MapController : MonoBehaviour
     void Start()
     {
         availableRooms = new List<Room>();
+        placedRooms = new Dictionary<Vector2Int, Room>();
+
         foreach (var roomPrefab in availableRoomPrefabs)
         {
             availableRooms.Add(new Room(roomPrefab));
         }
 
-/*
-        //Create map
-        for (int i = 0; i < numberOfRooms; i++)
-        {
-            int roomToInstantiate = Random.Range(0, availableRoomPrefabs.Count);
-            levelRooms.Insert(i, availableRoomPrefabs.ElementAt(roomToInstantiate));
-        }
-*/
         Debug.LogFormat("MapController::Start - Creating map from a pool of {0} different rooms.", availableRooms.Count);
+
         Room initialRoom = availableRooms.ElementAt(Random.Range(0, availableRooms.Count));
         GameObject initialRoomGameObject = Instantiate(initialRoom.prefab, new Vector3(0, 0, 0), Quaternion.identity);
         initialRoom.setPrefab(initialRoomGameObject);
-        instantiateRooms(initialRoom, roomGeneratingDeepness);
-        
+        Vector2Int initialRoomPosition = new Vector2Int(0, 0);
+        placedRooms[initialRoomPosition] = initialRoom;
+        instantiateRooms(initialRoom, initialRoomPosition, roomGeneratingDeepness);
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class MapController : MonoBehaviour
 
         Repeat the process until getting a tree with @param generatingDeepness levels.
     */
-    void instantiateRooms(Room currentRoom, int remainingDeepness)
+    void instantiateRooms(Room currentRoom, Vector2Int currentRoomPositionInMap, int remainingDeepness)
     {
         if(remainingDeepness <= 0)
         {
@@ -59,7 +59,33 @@ public class MapController : MonoBehaviour
 
         foreach(Room.DoorDirection direction in currentRoom.getAvailableDirections())
         {
-            Room newRoom = getMatchingRoom(direction);
+            Room newRoom = getMatchingRoom(direction);   
+
+            Vector2Int newRoomPositionInMap = currentRoomPositionInMap;
+            switch(direction) {
+                case Room.DoorDirection.Left: 
+                    newRoomPositionInMap += new Vector2Int(-1, 0);
+                    break;
+                case Room.DoorDirection.Top: 
+                    newRoomPositionInMap += new Vector2Int(0, 1);
+                    break;
+                case Room.DoorDirection.Right:
+                    newRoomPositionInMap += new Vector2Int(1, 0);
+                    break;
+                case Room.DoorDirection.Bottom: 
+                    newRoomPositionInMap += new Vector2Int(0, -1);
+                    break;
+                default: 
+                    throw new System.ArgumentOutOfRangeException(nameof(direction), $"Invalid DoorDirection value: {direction}");
+            }
+
+            if(placedRooms.ContainsKey(newRoomPositionInMap)){
+                //Skip placing a room in the same spot
+                continue;
+            } else {
+                placedRooms[newRoomPositionInMap] = newRoom;
+            }
+
 
             //Debug.LogFormat("STM - for room \n{0}\n generating room\n {1}", currentRoom.ToString(), newRoom.ToString());
 
@@ -94,7 +120,7 @@ public class MapController : MonoBehaviour
             //Debug.LogFormat("STM - currentRoomDistanceCenterToExitDoor = {0}\n newRoomDistanceCenterToEntryDoor = {1}\n currentRoomPosition = {2}\n newRoomPosition = {3}", currentRoomDistanceCenterToExitDoor, newRoomDistanceCenterToEntryDoor, currentRoom.prefab.transform.position, newRoomPosition);
 
             newRoom.prefab.transform.position = newRoomPosition;
-            instantiateRooms(newRoom, remainingDeepness - 1);
+            instantiateRooms(newRoom, newRoomPositionInMap, remainingDeepness - 1);
         }
 
     }
