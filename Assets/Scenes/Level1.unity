@@ -358,7 +358,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.595303
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -493,6 +493,7 @@ MonoBehaviour:
   - {fileID: 4708043183386204833, guid: 597495fdd2c10e04e94b0bf0f0acc5db, type: 3}
   roomGeneratingDeepness: 2
   roomPrefabResourceFolder: Level1
+  finishLevelBeaconPrefab: {fileID: 1742064348937001276, guid: 04ed84b28571c334aa8f4411fa83fa1a, type: 3}
 --- !u!4 &1803383627
 Transform:
   m_ObjectHideFlags: 0

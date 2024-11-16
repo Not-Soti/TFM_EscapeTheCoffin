@@ -9,6 +9,7 @@ public class MapController : MonoBehaviour
     public List<GameObject> availableRoomPrefabs; //Room prefabs used to build the level
     public int roomGeneratingDeepness;
     public string roomPrefabResourceFolder;
+    public GameObject finishLevelBeaconPrefab;
 
     private List<Room> availableRooms;
 
@@ -39,7 +40,7 @@ public class MapController : MonoBehaviour
         Vector2Int initialRoomPosition = new Vector2Int(0, 0);
         placedRooms[initialRoomPosition] = initialRoom;
         instantiateRooms(initialRoom, initialRoomPosition, roomGeneratingDeepness);
-       // placeFinishLevelBeacon();
+        placeFinishLevelBeacon();
     }
 
     // Update is called once per frame
@@ -136,45 +137,6 @@ public class MapController : MonoBehaviour
     private Room getMatchingRoom(Room.DoorDirection entryDirection, int remainingDeepness) {
         //If last round of doors is being generated, don't let empty doors outside the map
         if(remainingDeepness == 1) {
-            /*
-            string resourcesPath = string.Format("Levels/{0}/Prefabs/", roomPrefabResourceFolder);
-            string roomPrefabPath = null;
-
-            switch(entryDirection) {
-            case Room.DoorDirection.Left: 
-                roomPrefabPath = resourcesPath + "RoomR";
-                break;
-            case Room.DoorDirection.Top: 
-                roomPrefabPath = resourcesPath + "RoomB";
-                break;
-            case Room.DoorDirection.Right: 
-                roomPrefabPath = resourcesPath + "RoomL";
-                break;
-            case Room.DoorDirection.Bottom: 
-                roomPrefabPath = resourcesPath +  "RoomT";
-                break;
-            default: 
-                throw new System.ArgumentOutOfRangeException(nameof(entryDirection), $"Invalid DoorDirection value: {entryDirection}");
-            }
-
-            if(roomPrefabPath != null){
-                Debug.LogFormat("STM - roomPrefabPath != null - {0}", roomPrefabPath);
-                GameObject matchingRoomPrefab = Instantiate(Resources.Load(roomPrefabPath)) as GameObject;
-                Debug.LogFormat("STM - matchingRoomPrefab - gotten");
-                if(matchingRoomPrefab != null){
-                    Room matchingRoom = new Room(matchingRoomPrefab);
-                    Debug.LogFormat("STM - Returning room {0}", matchingRoom.ToString());
-                    return matchingRoom;
-                } else {
-                    Debug.LogFormat("STM - matchingRoomPrefab == null for prefab");
-                    throw new System.Exception(string.Format("Couldn't find prefab in {0}", roomPrefabPath));
-                }
-            } else {
-                Debug.LogFormat("STM - roomPrefabPath == null");
-                throw new System.Exception();
-            }
-            */
-
             GameObject prefab = null;
             switch(entryDirection) {
             case Room.DoorDirection.Left: 
@@ -200,9 +162,25 @@ public class MapController : MonoBehaviour
             }
             
         } else {
-
             List<Room> matchingRooms = availableRooms.Where(room => room.getAvailableDirections().Contains(Room.GetOppositeDirection(entryDirection))).ToList();
             return matchingRooms.ElementAt(Random.Range(0, matchingRooms.Count));
         }
+    }
+
+    private void placeFinishLevelBeacon(){
+        List<Room> edgeRooms = new List<Room>();
+        foreach (KeyValuePair<Vector2Int, Room> pair in placedRooms){
+            if(
+                (pair.Value.prefab.transform.Find("FinishLevelBeacon") != null) &&
+                (pair.Key.x != 0) && (pair.Key.y != 0)
+            ) {
+                edgeRooms.Add(pair.Value);
+            }
+        }
+        
+        Room exitRoom = edgeRooms.ElementAt(Random.Range(0, edgeRooms.Count));
+
+        GameObject beacon = Instantiate(finishLevelBeaconPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        beacon.transform.position = exitRoom.prefab.transform.position;
     }
 }
