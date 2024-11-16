@@ -492,6 +492,7 @@ MonoBehaviour:
   - {fileID: 4708043183386204833, guid: 1d027b01c9a9b0e4eb6eee51f99cbe9e, type: 3}
   - {fileID: 4708043183386204833, guid: 597495fdd2c10e04e94b0bf0f0acc5db, type: 3}
   roomGeneratingDeepness: 2
+  roomPrefabResourceFolder: Level1
 --- !u!4 &1803383627
 Transform:
   m_ObjectHideFlags: 0

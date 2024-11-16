@@ -8,18 +8,21 @@ public class MapController : MonoBehaviour
 
     public List<GameObject> availableRoomPrefabs; //Room prefabs used to build the level
     public int roomGeneratingDeepness;
+    public string roomPrefabResourceFolder;
+
     private List<Room> availableRooms;
 
     // Stores the map as a matrix, storing the relative coordinates of the matrix where
     // a room is and its value.
     private Dictionary<Vector2Int, Room> placedRooms;
-    
-    //private List<GameObject> levelRooms; //Rooms that conform the level
-    //private List<Room> levelRooms; //Rooms that conform the level
 
     // Start is called before the first frame update
     void Start()
     {
+        if(roomPrefabResourceFolder == null){
+            throw new System.Exception("Defining roomPrefabResourceFolder is mandatory");
+        }
+
         availableRooms = new List<Room>();
         placedRooms = new Dictionary<Vector2Int, Room>();
 
@@ -36,6 +39,7 @@ public class MapController : MonoBehaviour
         Vector2Int initialRoomPosition = new Vector2Int(0, 0);
         placedRooms[initialRoomPosition] = initialRoom;
         instantiateRooms(initialRoom, initialRoomPosition, roomGeneratingDeepness);
+       // placeFinishLevelBeacon();
     }
 
     // Update is called once per frame
@@ -59,7 +63,7 @@ public class MapController : MonoBehaviour
 
         foreach(Room.DoorDirection direction in currentRoom.getAvailableDirections())
         {
-            Room newRoom = getMatchingRoom(direction);   
+            Room newRoom = getMatchingRoom(direction, remainingDeepness);   
 
             Vector2Int newRoomPositionInMap = currentRoomPositionInMap;
             switch(direction) {
@@ -129,39 +133,76 @@ public class MapController : MonoBehaviour
         Returns a random room from the available ones such that it is
         accessible from @param entryDirection Room.DoorDirection
     */
-    private Room getMatchingRoom(Room.DoorDirection entryDirection) {
-        List<Room> matchingRooms = availableRooms.Where(room => room.getAvailableDirections().Contains(Room.GetOppositeDirection(entryDirection))).ToList();
-        
-        return matchingRooms.ElementAt(Random.Range(0, matchingRooms.Count));
-    }
+    private Room getMatchingRoom(Room.DoorDirection entryDirection, int remainingDeepness) {
+        //If last round of doors is being generated, don't let empty doors outside the map
+        if(remainingDeepness == 1) {
+            /*
+            string resourcesPath = string.Format("Levels/{0}/Prefabs/", roomPrefabResourceFolder);
+            string roomPrefabPath = null;
 
-/*
-    private void instantiateRooms(){
-                //Instantiate the map
-        for (int i = 0; i < levelRooms.Count; i++)
-        {
-            GameObject actualRoom = Instantiate(levelRooms.ElementAt(i), new Vector3(0,0,0), Quaternion.identity);
- 
-            //Place rooms relative to the previous one
-            if(i > 0)
-            {
-                GameObject previousRoom = levelRooms.ElementAt(i-1);
-                GameObject previousRoomLeftDoor = previousRoom.transform.Find("DoorLeft").gameObject;
-                Vector3 previousRoomDistanceCenterToLeftDoor = previousRoom.transform.position - previousRoomLeftDoor.transform.position;
+            switch(entryDirection) {
+            case Room.DoorDirection.Left: 
+                roomPrefabPath = resourcesPath + "RoomR";
+                break;
+            case Room.DoorDirection.Top: 
+                roomPrefabPath = resourcesPath + "RoomB";
+                break;
+            case Room.DoorDirection.Right: 
+                roomPrefabPath = resourcesPath + "RoomL";
+                break;
+            case Room.DoorDirection.Bottom: 
+                roomPrefabPath = resourcesPath +  "RoomT";
+                break;
+            default: 
+                throw new System.ArgumentOutOfRangeException(nameof(entryDirection), $"Invalid DoorDirection value: {entryDirection}");
+            }
 
-                GameObject actualRoomRightDoor = actualRoom.transform.Find("DoorRight").gameObject;
-                Vector3 actualRoomDistanceCenterToRightDoor = actualRoom.transform.position - actualRoomRightDoor.transform.position;
+            if(roomPrefabPath != null){
+                Debug.LogFormat("STM - roomPrefabPath != null - {0}", roomPrefabPath);
+                GameObject matchingRoomPrefab = Instantiate(Resources.Load(roomPrefabPath)) as GameObject;
+                Debug.LogFormat("STM - matchingRoomPrefab - gotten");
+                if(matchingRoomPrefab != null){
+                    Room matchingRoom = new Room(matchingRoomPrefab);
+                    Debug.LogFormat("STM - Returning room {0}", matchingRoom.ToString());
+                    return matchingRoom;
+                } else {
+                    Debug.LogFormat("STM - matchingRoomPrefab == null for prefab");
+                    throw new System.Exception(string.Format("Couldn't find prefab in {0}", roomPrefabPath));
+                }
+            } else {
+                Debug.LogFormat("STM - roomPrefabPath == null");
+                throw new System.Exception();
+            }
+            */
 
-                Vector3 newPosition = new Vector3(
-                    Mathf.Abs(previousRoomDistanceCenterToLeftDoor.x) + Mathf.Abs(actualRoomDistanceCenterToRightDoor.x),
-                    Mathf.Abs(previousRoomDistanceCenterToLeftDoor.y) + Mathf.Abs(actualRoomDistanceCenterToRightDoor.y),
-                    0
-                ) + previousRoom.transform.position;
-                actualRoom.transform.position = newPosition;
+            GameObject prefab = null;
+            switch(entryDirection) {
+            case Room.DoorDirection.Left: 
+                prefab = availableRoomPrefabs.FirstOrDefault(p => p.name == "RoomR");
+                break;
+            case Room.DoorDirection.Top: 
+                prefab = availableRoomPrefabs.FirstOrDefault(p => p.name == "RoomB");
+                break;
+            case Room.DoorDirection.Right: 
+                prefab = availableRoomPrefabs.FirstOrDefault(p => p.name == "RoomL");
+                break;
+            case Room.DoorDirection.Bottom: 
+                prefab = availableRoomPrefabs.FirstOrDefault(p => p.name == "RoomT");
+                break;
+            default: 
+                throw new System.ArgumentOutOfRangeException(nameof(entryDirection), $"Invalid DoorDirection value: {entryDirection}");
+            }
+
+            if(prefab != null){
+                return new Room(prefab);
+            } else {
+                throw new System.Exception(string.Format("Couldnt find prefab for direction {0}", entryDirection));
             }
             
-            levelRooms[i] = actualRoom;
+        } else {
+
+            List<Room> matchingRooms = availableRooms.Where(room => room.getAvailableDirections().Contains(Room.GetOppositeDirection(entryDirection))).ToList();
+            return matchingRooms.ElementAt(Random.Range(0, matchingRooms.Count));
         }
     }
-*/
 }
