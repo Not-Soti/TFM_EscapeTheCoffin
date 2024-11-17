@@ -16,9 +16,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>(); 
         animator = GetComponent<Animator>();
 
-        //idlePrefab = Instantiate(myPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
         idlePrefab.SetActive(true);
-        //runningPrefab = Instantiate(myPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
         runningPrefab.SetActive(false);
     }
 
@@ -28,7 +26,6 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 inputDirection = movementJoystick.Direction;
         if(inputDirection != new Vector2(0f, 0f)){
-            //animator.SetInteger("player_animation_state", (int) PlayerAnimationState.Walking);
 
             idlePrefab.SetActive(false);
             runningPrefab.SetActive(true);
@@ -39,12 +36,10 @@ public class PlayerController : MonoBehaviour
             }
             transform.localScale = new Vector3(facingDirection, 1f, 1f);
         }else {
-            //animator.SetInteger("player_animation_state", (int) PlayerAnimationState.Idle);
             idlePrefab.SetActive(true);
             runningPrefab.SetActive(false);
         }
 
-        //Raycast to check Start game door collider
         Debug.DrawRay(transform.position, Vector3.up * 1f, Color.red);
         if(Physics2D.Raycast(transform.position, Vector3.up, 1f)){
            // Debug.Log("STM - Raycast activated");

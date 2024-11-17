@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7129097321361419067}
   - component: {fileID: 5363617011135214336}
   - component: {fileID: 3439101510475678238}
+  - component: {fileID: 7390627656028567497}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3032963917967001418, guid: 3ae31073d9190d94bbbb9f0fcde461d4, type: 3}
+  speed: 6
 --- !u!50 &5363617011135214336
 Rigidbody2D:
   serializedVersion: 4
@@ -110,6 +112,27 @@ CapsuleCollider2D:
   m_Offset: {x: -0.05876857, y: 0.6449693}
   m_Size: {x: 0.44174242, y: 0.9990939}
   m_Direction: 0
+--- !u!95 &7390627656028567497
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7302261648969446801}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4bff1dd28a30a5458c316e7a3cf235c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &3973865693389162112
 PrefabInstance:
   m_ObjectHideFlags: 0
