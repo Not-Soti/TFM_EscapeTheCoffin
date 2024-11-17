@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3032963917967001418, guid: 3ae31073d9190d94bbbb9f0fcde461d4, type: 3}
   speed: 6
+  bulletPrefab: {fileID: 8830410701677037245, guid: 715e1ace19a2ec147940233f6917862b, type: 3}
 --- !u!50 &5363617011135214336
 Rigidbody2D:
   serializedVersion: 4
@@ -109,8 +110,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05876857, y: 0.6449693}
-  m_Size: {x: 0.44174242, y: 0.9990939}
+  m_Offset: {x: 0.015331849, y: 0.0023076534}
+  m_Size: {x: 0.4938136, y: 0.9837847}
   m_Direction: 0
 --- !u!95 &7390627656028567497
 Animator:

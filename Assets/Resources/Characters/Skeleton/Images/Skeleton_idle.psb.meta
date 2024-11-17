@@ -118,8 +118,8 @@ ScriptedImporter:
         rgba: 4278190335
     - name: hood_front
       guid: 8e64fe85db8782740af870f38b114fbe
-      position: {x: 43.71092, y: -0.0000057762572, z: 0}
-      rotation: {x: 0, y: 0, z: 0.046155047, w: 0.9989343}
+      position: {x: 43.71091, y: -0.000008472831, z: 0}
+      rotation: {x: 0, y: 0, z: 0.04615513, w: 0.9989343}
       length: 11.318482
       parentId: 2
       color:
@@ -128,8 +128,8 @@ ScriptedImporter:
     - name: head
       guid: 9466f3628f97f1f44b0a447a3a2d3dcc
       position: {x: 30.911526, y: 2.7745895, z: 0}
-      rotation: {x: 0, y: 0, z: 0.73141, w: 0.68193793}
-      length: 43.71092
+      rotation: {x: 0, y: 0, z: 0.73141, w: 0.68193805}
+      length: 43.71091
       parentId: -1
       color:
         serializedVersion: 2
@@ -145,9 +145,9 @@ ScriptedImporter:
         rgba: 4278243327
     - name: hood_tip
       guid: 10ecdf8ae4596e74597150ecc028e3fc
-      position: {x: -1.2827631, y: -31.282007, z: 0}
-      rotation: {x: 0, y: 0, z: -0.75240934, w: 0.6586959}
-      length: 10.294255
+      position: {x: -1.2827585, y: -31.282007, z: 0}
+      rotation: {x: 0, y: 0, z: -0.7524093, w: 0.6586959}
+      length: 10.294256
       parentId: 1
       color:
         serializedVersion: 2
@@ -493,8 +493,8 @@ ScriptedImporter:
     - name: head
       guid: 9466f3628f97f1f44b0a447a3a2d3dcc
       position: {x: 23.911526, y: -7.225403, z: 0}
-      rotation: {x: 0, y: 0, z: 0.73141, w: 0.68193793}
-      length: 43.71092
+      rotation: {x: 0, y: 0, z: 0.73141, w: 0.68193805}
+      length: 43.71091
       parentId: -1
       color:
         serializedVersion: 2
@@ -809,8 +809,8 @@ ScriptedImporter:
     - name: head
       guid: 9466f3628f97f1f44b0a447a3a2d3dcc
       position: {x: 29.911526, y: -0.22541046, z: 0}
-      rotation: {x: 0, y: 0, z: 0.73141, w: 0.68193793}
-      length: 43.71092
+      rotation: {x: 0, y: 0, z: 0.73141, w: 0.68193805}
+      length: 43.71091
       parentId: -1
       color:
         serializedVersion: 2
@@ -3074,8 +3074,8 @@ ScriptedImporter:
     - name: head
       guid: 9466f3628f97f1f44b0a447a3a2d3dcc
       position: {x: 61.911526, y: 51.77459, z: 0}
-      rotation: {x: 0, y: 0, z: 0.73141, w: 0.68193793}
-      length: 43.71092
+      rotation: {x: 0, y: 0, z: 0.73141, w: 0.68193805}
+      length: 43.71091
       parentId: -1
       color:
         serializedVersion: 2
@@ -3109,8 +3109,8 @@ ScriptedImporter:
         rgba: 4278255360
     - name: hood_front
       guid: 8e64fe85db8782740af870f38b114fbe
-      position: {x: 43.71092, y: -0.0000064188926, z: 0}
-      rotation: {x: 0, y: 0, z: 0.04615501, w: 0.9989343}
+      position: {x: 43.71091, y: -0.000008705684, z: 0}
+      rotation: {x: 0, y: 0, z: 0.046155136, w: 0.9989343}
       length: 11.318482
       parentId: 5
       color:
@@ -3227,7 +3227,7 @@ ScriptedImporter:
       order: 0
     dimension: {x: 0, y: 0}
     characterGroups: []
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.4}
     boneReadOnly: 0
   sharedRigSpriteImportData: []
   sharedRigCharacterData:
@@ -3288,8 +3288,8 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
-  documentPivot: {x: 0.5, y: 0}
-  documentAlignment: 7
+  documentPivot: {x: 0.5, y: 0.4}
+  documentAlignment: 9
   importHiddenLayers: 0
   layerMappingOption: 2
   generatePhysicsShape: 0

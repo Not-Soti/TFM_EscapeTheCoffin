@@ -857,16 +857,16 @@ ScriptedImporter:
     - name: arm_front_mid
       guid: f6f429175ff1c104184c0b7d2d46f780
       position: {x: 19.925043, y: 0.000005028301, z: 0}
-      rotation: {x: 0, y: 0, z: 0.16067569, w: 0.9870073}
-      length: 7.4550447
+      rotation: {x: 0, y: 0, z: 0.160676, w: 0.98700726}
+      length: 7.455051
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: arm_front_bot
       guid: a8e97f0b77927ff449d3d5f81c34578d
-      position: {x: 7.4550533, y: 0.000002229874, z: 0}
-      rotation: {x: 0, y: 0, z: 0.52780634, w: 0.84936476}
+      position: {x: 7.4550557, y: -0.0000021270566, z: 0}
+      rotation: {x: 0, y: 0, z: 0.5278061, w: 0.84936494}
       length: 10.402673
       parentId: 1
       color:
@@ -874,26 +874,26 @@ ScriptedImporter:
         rgba: 4294902015
     - name: finger_6_1
       guid: 5a753501860187b459d926333ebaed8a
-      position: {x: 13.868625, y: 2.7529826, z: 0}
-      rotation: {x: 0, y: 0, z: 0.14135857, w: 0.9899585}
-      length: 8.54438
+      position: {x: 13.868623, y: 2.7529829, z: 0}
+      rotation: {x: 0, y: 0, z: 0.14135858, w: 0.9899585}
+      length: 8.544379
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4286643968
     - name: finger_6_2
       guid: 57d4faaa568811946b9edc8b539234b4
-      position: {x: 8.544385, y: 0.0000052428236, z: 0}
-      rotation: {x: 0, y: 0, z: 0.105543315, w: 0.9944147}
-      length: 6.589035
+      position: {x: 8.544375, y: -0.000009580755, z: 0}
+      rotation: {x: 0, y: 0, z: 0.105543286, w: 0.99441475}
+      length: 6.5890346
       parentId: 3
       color:
         serializedVersion: 2
         rgba: 4294934528
     - name: finger_5_1
       guid: 94263945c364a0b45b62449d6e64daa3
-      position: {x: 13.422038, y: -2.0569112, z: 0}
-      rotation: {x: 0, y: 0, z: -0.10342323, w: 0.9946375}
+      position: {x: 13.422035, y: -2.0569105, z: 0}
+      rotation: {x: 0, y: 0, z: -0.10342319, w: 0.9946375}
       length: 10.302427
       parentId: 2
       color:
@@ -901,17 +901,17 @@ ScriptedImporter:
         rgba: 4278190335
     - name: finger_5_2
       guid: 5c191617926e8f4488f0a57e5f0b9474
-      position: {x: 10.30243, y: 0.000007462744, z: 0}
-      rotation: {x: 0, y: 0, z: 0.17168988, w: 0.98515105}
-      length: 7.4546356
+      position: {x: 10.3024235, y: -0.000001942999, z: 0}
+      rotation: {x: 0, y: 0, z: 0.17168996, w: 0.98515105}
+      length: 7.4546366
       parentId: 5
       color:
         serializedVersion: 2
         rgba: 4278255488
     - name: finger_4_2
       guid: ecda5da8c8e838d4f8bf36e221bb49f1
-      position: {x: 10.696513, y: 0.0000012693345, z: 0}
-      rotation: {x: 0, y: 0, z: 0.17646599, w: 0.9843068}
+      position: {x: 10.6965275, y: -0.0000025372428, z: 0}
+      rotation: {x: 0, y: 0, z: 0.17646632, w: 0.98430675}
       length: 8.584285
       parentId: 8
       color:
@@ -919,36 +919,36 @@ ScriptedImporter:
         rgba: 4294902015
     - name: finger_4_1
       guid: 1c6ba01cf2da2cf4d81b507069242561
-      position: {x: 10.380376, y: -3.4129236, z: 0}
-      rotation: {x: 0, y: 0, z: -0.33474478, w: 0.9423089}
-      length: 10.696513
+      position: {x: 10.380373, y: -3.4129145, z: 0}
+      rotation: {x: 0, y: 0, z: -0.33474493, w: 0.9423088}
+      length: 10.696515
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: finger_3
       guid: 1a156302d7db5e244ba6ff681253e3c1
-      position: {x: 4.941284, y: -7.0476017, z: 0}
-      rotation: {x: 0, y: 0, z: -0.337659, w: 0.94126856}
-      length: 13.355967
+      position: {x: 4.941281, y: -7.047599, z: 0}
+      rotation: {x: 0, y: 0, z: -0.33765903, w: 0.94126856}
+      length: 13.355966
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: finger_2
       guid: 82c05d3607bb6a245bdee1e1dd35e9a3
-      position: {x: -2.085223, y: -6.5112295, z: 0}
-      rotation: {x: 0, y: 0, z: -0.46116978, w: 0.88731194}
-      length: 12.713139
+      position: {x: -2.0852263, y: -6.511226, z: 0}
+      rotation: {x: 0, y: 0, z: -0.46116975, w: 0.88731194}
+      length: 12.713137
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4278255360
     - name: finger_1
       guid: 5646ac33e7f9ec14ca5660810acc9f39
-      position: {x: -9.003248, y: -4.5537605, z: 0}
-      rotation: {x: 0, y: 0, z: -0.59135777, w: 0.8064094}
-      length: 6.1297193
+      position: {x: -9.003251, y: -4.5537486, z: 0}
+      rotation: {x: 0, y: 0, z: -0.5913577, w: 0.80640936}
+      length: 6.1297197
       parentId: 2
       color:
         serializedVersion: 2
@@ -1701,16 +1701,16 @@ ScriptedImporter:
       guid: f9e78e2e489b03a4bac76e889d5c6991
       position: {x: 8.170063, y: 38.74501, z: 0}
       rotation: {x: 0, y: 0, z: 0.70710695, w: -0.70710665}
-      length: 20.824142
+      length: 20.824146
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4278223103
     - name: arm_back_bot
       guid: 4c3cd6c5fd687c1409510f88455ba5cd
-      position: {x: 20.824137, y: -0.0000052074756, z: 0}
-      rotation: {x: 0, y: 0, z: 0.42415565, w: 0.90558934}
-      length: 6.802508
+      position: {x: 20.824137, y: -0.000009022173, z: 0}
+      rotation: {x: 0, y: 0, z: 0.42415562, w: 0.9055893}
+      length: 6.802507
       parentId: 0
       color:
         serializedVersion: 2
@@ -2910,16 +2910,16 @@ ScriptedImporter:
     - name: arm_front_mid
       guid: f6f429175ff1c104184c0b7d2d46f780
       position: {x: 19.925045, y: -0.00000041088225, z: 0}
-      rotation: {x: 0, y: 0, z: 0.1606757, w: 0.98700726}
-      length: 7.4550433
+      rotation: {x: 0, y: 0, z: 0.160676, w: 0.9870072}
+      length: 7.45505
       parentId: 3
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: arm_front_bot
       guid: a8e97f0b77927ff449d3d5f81c34578d
-      position: {x: 7.4550467, y: 0.0000023124908, z: 0}
-      rotation: {x: 0, y: 0, z: 0.52780634, w: 0.8493648}
+      position: {x: 7.455052, y: -0.0000021887963, z: 0}
+      rotation: {x: 0, y: 0, z: 0.5278061, w: 0.84936494}
       length: 10.402672
       parentId: 4
       color:
@@ -2928,15 +2928,15 @@ ScriptedImporter:
     - name: arm_back_top
       guid: f9e78e2e489b03a4bac76e889d5c6991
       position: {x: 29.442072, y: 9.733715, z: 0}
-      rotation: {x: 0, y: -0, z: 0.99946415, w: 0.032734342}
-      length: 20.824135
+      rotation: {x: 0, y: -0, z: 0.9994641, w: 0.032734346}
+      length: 20.824144
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4278223103
     - name: arm_back_bot
       guid: 4c3cd6c5fd687c1409510f88455ba5cd
-      position: {x: 20.82414, y: -0.0000072502567, z: 0}
+      position: {x: 20.824146, y: -0.000009051876, z: 0}
       rotation: {x: 0, y: 0, z: 0.42415568, w: 0.90558934}
       length: 6.8025055
       parentId: 6
@@ -3009,16 +3009,16 @@ ScriptedImporter:
     - name: finger_4_1
       guid: 1c6ba01cf2da2cf4d81b507069242561
       position: {x: 10.380375, y: -3.4129202, z: 0}
-      rotation: {x: 0, y: 0, z: -0.33474478, w: 0.94230884}
-      length: 10.696512
+      rotation: {x: 0, y: 0, z: -0.33474496, w: 0.9423088}
+      length: 10.696514
       parentId: 5
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: finger_4_2
       guid: ecda5da8c8e838d4f8bf36e221bb49f1
-      position: {x: 10.696512, y: -0.000002979455, z: 0}
-      rotation: {x: 0, y: 0, z: 0.17646606, w: 0.98430675}
+      position: {x: 10.696519, y: 0.0000012964701, z: 0}
+      rotation: {x: 0, y: 0, z: 0.17646627, w: 0.98430675}
       length: 8.584284
       parentId: 15
       color:
@@ -3035,8 +3035,8 @@ ScriptedImporter:
         rgba: 4278190335
     - name: finger_5_2
       guid: 5c191617926e8f4488f0a57e5f0b9474
-      position: {x: 10.302427, y: 0.0000007124928, z: 0}
-      rotation: {x: 0, y: 0, z: 0.17168987, w: 0.9851511}
+      position: {x: 10.302422, y: 0.0000018305714, z: 0}
+      rotation: {x: 0, y: 0, z: 0.17168991, w: 0.9851511}
       length: 7.454634
       parentId: 17
       color:
@@ -3053,8 +3053,8 @@ ScriptedImporter:
         rgba: 4286643968
     - name: finger_6_2
       guid: 57d4faaa568811946b9edc8b539234b4
-      position: {x: 8.54438, y: -0.00000019164963, z: 0}
-      rotation: {x: 0, y: 0, z: 0.10554332, w: 0.99441475}
+      position: {x: 8.54438, y: 0.00000091188394, z: 0}
+      rotation: {x: 0, y: 0, z: 0.10554331, w: 0.99441475}
       length: 6.589034
       parentId: 19
       color:
@@ -3135,7 +3135,7 @@ ScriptedImporter:
       order: 0
     dimension: {x: 0, y: 0}
     characterGroups: []
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.43, y: 0.5}
     boneReadOnly: 0
   sharedRigSpriteImportData: []
   sharedRigCharacterData:
@@ -3196,8 +3196,8 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
-  documentPivot: {x: 0.5, y: 0}
-  documentAlignment: 7
+  documentPivot: {x: 0.43, y: 0.5}
+  documentAlignment: 9
   importHiddenLayers: 0
   layerMappingOption: 2
   generatePhysicsShape: 0

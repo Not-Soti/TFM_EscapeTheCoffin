@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IBulletTarget
 {
     public Joystick movementJoystick;
     public float moveSpeed = 5.0f;
@@ -11,8 +11,7 @@ public class PlayerController : MonoBehaviour
     public GameObject runningPrefab;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         rigidBody = GetComponent<Rigidbody2D>(); 
         animator = GetComponent<Animator>();
 
@@ -22,8 +21,7 @@ public class PlayerController : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         Vector2 inputDirection = movementJoystick.Direction;
         if(inputDirection != new Vector2(0f, 0f)){
 
@@ -46,10 +44,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         Vector2 inputDirection = movementJoystick.Direction;
         rigidBody.velocity = inputDirection * moveSpeed;   
+    }
+
+    public void onShootReceived() {
+        Debug.Log("PlayerController::onShootReceived");
     }
 
     //MARK: Private

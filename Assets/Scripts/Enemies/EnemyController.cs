@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IBulletTarget
 {
 
     public GameObject player;
     public float speed;
+    public GameObject bulletPrefab;
     
     private float lastMovementTimeSeconds;
 
@@ -68,6 +69,17 @@ public class EnemyController : MonoBehaviour
 
             lastMovementTimeSeconds = now;
         }
+    }
+
+    /* TODO - Create Bullet superclass and extend for different types of bullets, having a origin and target that can be both player or enemies*/
+    public void shootBullet() {
+        GameObject bullet = Instantiate(bulletPrefab, new Vector3(0,0,0), Quaternion.identity);
+        bullet.GetComponent<BulletController>().initialize(gameObject, player);
+        bullet.GetComponent<BulletController>().shoot();    
+    }
+
+    public void onShootReceived() {
+        Debug.Log("EnemyController::onShootReceived");
     }
 
     private enum EnemyAnimationState {

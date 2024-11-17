@@ -52,7 +52,6 @@ public class MapController : MonoBehaviour
     /**
         Generates new rooms recursively. Creates a random room and for each of its doors
         generates a new random room with matching doors.
-
         Repeat the process until getting a tree with @param generatingDeepness levels.
     */
     void instantiateRooms(Room currentRoom, Vector2Int currentRoomPositionInMap, int remainingDeepness)
