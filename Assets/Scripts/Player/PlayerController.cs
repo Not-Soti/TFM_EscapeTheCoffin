@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 inputDirection = movementJoystick.Direction;
         if(inputDirection != new Vector2(0f, 0f)){
-            animator.SetInteger("player_animation_state", (int) PlayerAnimationState.Walking);
+            //animator.SetInteger("player_animation_state", (int) PlayerAnimationState.Walking);
 
             idlePrefab.SetActive(false);
             runningPrefab.SetActive(true);
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
             }
             transform.localScale = new Vector3(facingDirection, 1f, 1f);
         }else {
-            animator.SetInteger("player_animation_state", (int) PlayerAnimationState.Idle);
+            //animator.SetInteger("player_animation_state", (int) PlayerAnimationState.Idle);
             idlePrefab.SetActive(true);
             runningPrefab.SetActive(false);
         }
@@ -62,9 +62,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Animator animator;
     
-    private enum PlayerAnimationState {
-        Idle = 0,
-        Walking = 1
-    }
+
 
 }
