@@ -83,7 +83,7 @@ public class EnemyController : MonoBehaviour, IBulletTarget
     }
 
     public void onShootReceived() {
-        Debug.Log("EnemyController::onShootReceived");
+        Destroy(gameObject);
     }
 
     private enum EnemyAnimationState {

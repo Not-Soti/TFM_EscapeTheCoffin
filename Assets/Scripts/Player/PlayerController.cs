@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour, IBulletTarget
     public GameObject idlePrefab;
     public GameObject runningPrefab;
     public GameObject weaponPrefab;
+    public GameObject bulletPrefab;
+
 
     private Rigidbody2D rigidBody;
     private Animator animator;
@@ -67,5 +69,11 @@ public class PlayerController : MonoBehaviour, IBulletTarget
             weaponPrefab.transform.position = bone.transform.position;
             weaponPrefab.transform.rotation = bone.transform.rotation;
         }
+    }
+
+    public void shootBullet() {
+        GameObject bullet = Instantiate(bulletPrefab, new Vector3(0,0,0), Quaternion.identity);
+        bullet.GetComponent<BulletController>().initialize(gameObject, null);
+        bullet.GetComponent<BulletController>().shoot();    
     }
 }
