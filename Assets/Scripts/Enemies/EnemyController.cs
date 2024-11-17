@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour, IBulletTarget
 {
 
-    public GameObject player;
+    private GameObject player;
     public float speed;
     public GameObject bulletPrefab;
     
@@ -21,6 +21,10 @@ public class EnemyController : MonoBehaviour, IBulletTarget
         animator = GetComponent<Animator>();
 
         lastMovementTimeSeconds = Time.time;
+    }
+
+    public void initialize(GameObject player){
+        this.player = player;
     }
 
     // Update is called once per frame

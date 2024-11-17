@@ -191,6 +191,7 @@ public class MapController : MonoBehaviour
 
     private void instantiateEnemies(Room room){
         GameObject enemy = enemyPool.ElementAt(Random.Range(0, enemyPool.Count));
-        Instantiate(enemy, room.prefab.transform.position, Quaternion.identity);
+        GameObject instance = Instantiate(enemy, room.prefab.transform.position, Quaternion.identity);
+        instance.GetComponent<EnemyController>().initialize(GameObject.Find("MainCharacter").gameObject);
     }
 }

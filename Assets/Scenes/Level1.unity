@@ -649,6 +649,8 @@ MonoBehaviour:
   roomGeneratingDeepness: 2
   roomPrefabResourceFolder: Level1
   finishLevelBeaconPrefab: {fileID: 1742064348937001276, guid: 04ed84b28571c334aa8f4411fa83fa1a, type: 3}
+  enemyPool:
+  - {fileID: 7302261648969446801, guid: 8638503e893850741af5d2b3b4d1abcb, type: 3}
 --- !u!4 &1803383627
 Transform:
   m_ObjectHideFlags: 0
