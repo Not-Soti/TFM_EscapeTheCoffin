@@ -10,6 +10,9 @@ public class MapController : MonoBehaviour
     public int roomGeneratingDeepness;
     public string roomPrefabResourceFolder;
     public GameObject finishLevelBeaconPrefab;
+    
+    public List<GameObject> enemyPool;
+
 
     private List<Room> availableRooms;
 
@@ -124,6 +127,9 @@ public class MapController : MonoBehaviour
             //Debug.LogFormat("STM - currentRoomDistanceCenterToExitDoor = {0}\n newRoomDistanceCenterToEntryDoor = {1}\n currentRoomPosition = {2}\n newRoomPosition = {3}", currentRoomDistanceCenterToExitDoor, newRoomDistanceCenterToEntryDoor, currentRoom.prefab.transform.position, newRoomPosition);
 
             newRoom.prefab.transform.position = newRoomPosition;
+
+            instantiateEnemies(newRoom);
+
             instantiateRooms(newRoom, newRoomPositionInMap, remainingDeepness - 1);
         }
 
@@ -181,5 +187,10 @@ public class MapController : MonoBehaviour
 
         GameObject beacon = Instantiate(finishLevelBeaconPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         beacon.transform.position = exitRoom.prefab.transform.position;
+    }
+
+    private void instantiateEnemies(Room room){
+        GameObject enemy = enemyPool.ElementAt(Random.Range(0, enemyPool.Count));
+        Instantiate(enemy, room.prefab.transform.position, Quaternion.identity);
     }
 }
