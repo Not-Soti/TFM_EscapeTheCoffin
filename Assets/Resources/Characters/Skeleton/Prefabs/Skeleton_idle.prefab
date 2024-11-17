@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2666193945656673062
+--- !u!1001 &363812607152806478
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: 2a75bb028bf15934f9b66f2effe2406e, type: 3}
       propertyPath: m_Name
-      value: SkeletonIdle
+      value: Skeleton_idle
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 2a75bb028bf15934f9b66f2effe2406e, type: 3}
       propertyPath: m_LocalPosition.x

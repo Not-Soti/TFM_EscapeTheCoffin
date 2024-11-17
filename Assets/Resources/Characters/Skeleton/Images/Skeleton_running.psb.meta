@@ -1984,7 +1984,7 @@ ScriptedImporter:
     spriteBone:
     - name: cloak_front_bottom
       guid: dc03553cae2ccfa45b19dfce20f16eb4
-      position: {x: 12.924989, y: -0.0000034654508, z: 0}
+      position: {x: 12.925008, y: -0.000027282857, z: 0}
       rotation: {x: 0, y: 0, z: 0.14986631, w: 0.9887063}
       length: 8.682953
       parentId: 1
@@ -2030,26 +2030,26 @@ ScriptedImporter:
     - name: cloak_back_upper
       guid: a3987206459015a48b8a37b9b4383951
       position: {x: 21.141401, y: 10.060057, z: 0}
-      rotation: {x: 0, y: 0, z: 0.96425724, w: 0.264968}
-      length: 11.226703
+      rotation: {x: 0, y: 0, z: 0.96425724, w: 0.26496816}
+      length: 11.226695
       parentId: 4
       color:
         serializedVersion: 2
         rgba: 4278223103
-    - name: arm_back
+    - name: weapon_holder
       guid: 3adcb759b617e9440b215c6bd26edb69
       position: {x: 21.812105, y: 11.945191, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91304946, w: 0.407849}
-      length: 23.414223
+      rotation: {x: 0, y: 0, z: 0.915039, w: 0.40336534}
+      length: 25.8863
       parentId: 4
       color:
         serializedVersion: 2
         rgba: 4294934528
     - name: cloak_back_bottom
       guid: 29b15d65b1ad1034bae7f8f39b0fdb19
-      position: {x: 11.226697, y: 0.0000030524357, z: 0}
-      rotation: {x: 0, y: 0, z: 0.23278446, w: 0.97252834}
-      length: 12.109153
+      position: {x: 11.226728, y: 0.0000025769687, z: 0}
+      rotation: {x: 0, y: 0, z: 0.23278461, w: 0.9725284}
+      length: 12.109152
       parentId: 5
       color:
         serializedVersion: 2
@@ -2472,9 +2472,9 @@ ScriptedImporter:
         rgba: 4294901760
     - name: cloak_back_bottom
       guid: 29b15d65b1ad1034bae7f8f39b0fdb19
-      position: {x: 11.2266865, y: -0.0000029045304, z: 0}
-      rotation: {x: 0, y: 0, z: 0.23278451, w: 0.9725284}
-      length: 12.109151
+      position: {x: 11.226694, y: 0.00001696125, z: 0}
+      rotation: {x: 0, y: 0, z: 0.23278461, w: 0.9725284}
+      length: 12.109152
       parentId: 6
       color:
         serializedVersion: 2
@@ -2482,8 +2482,8 @@ ScriptedImporter:
     - name: cloak_back_upper
       guid: a3987206459015a48b8a37b9b4383951
       position: {x: 21.141405, y: 10.060055, z: 0}
-      rotation: {x: 0, y: 0, z: 0.96425724, w: 0.264968}
-      length: 11.226703
+      rotation: {x: 0, y: 0, z: 0.96425724, w: 0.26496816}
+      length: 11.226695
       parentId: 2
       color:
         serializedVersion: 2
@@ -2793,11 +2793,11 @@ ScriptedImporter:
       height: 27
     spriteID: 86e0a5c233b6c1542a1f529bb2994e59
     spriteBone:
-    - name: arm_back
+    - name: weapon_holder
       guid: 3adcb759b617e9440b215c6bd26edb69
       position: {x: 19.820354, y: 20.561066, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91151, w: -0.4112781}
-      length: 23.414223
+      rotation: {x: 0, y: 0, z: 0.9094816, w: -0.4157443}
+      length: 25.886295
       parentId: -1
       color:
         serializedVersion: 2
@@ -3067,16 +3067,16 @@ ScriptedImporter:
     - name: cloak_back_upper
       guid: a3987206459015a48b8a37b9b4383951
       position: {x: 21.141405, y: 10.060053, z: 0}
-      rotation: {x: 0, y: -0, z: 0.96425724, w: 0.26496798}
-      length: 11.226703
+      rotation: {x: 0, y: -0, z: 0.96425724, w: 0.26496816}
+      length: 11.226696
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4278223103
     - name: cloak_back_bottom
       guid: 29b15d65b1ad1034bae7f8f39b0fdb19
-      position: {x: 11.226699, y: -0.00000067246106, z: 0}
-      rotation: {x: 0, y: 0, z: 0.23278444, w: 0.9725284}
+      position: {x: 11.2267, y: -0.00000029331682, z: 0}
+      rotation: {x: 0, y: 0, z: 0.23278461, w: 0.9725284}
       length: 12.109152
       parentId: 6
       color:
@@ -3091,11 +3091,11 @@ ScriptedImporter:
       color:
         serializedVersion: 2
         rgba: 4286643968
-    - name: arm_back
+    - name: weapon_holder
       guid: 3adcb759b617e9440b215c6bd26edb69
       position: {x: 21.81211, y: 11.945187, z: 0}
-      rotation: {x: 0, y: 0, z: 0.91304946, w: 0.407849}
-      length: 23.414223
+      rotation: {x: 0, y: -0, z: 0.915039, w: 0.40336537}
+      length: 25.886297
       parentId: 0
       color:
         serializedVersion: 2
@@ -3127,6 +3127,15 @@ ScriptedImporter:
       color:
         serializedVersion: 2
         rgba: 4278255615
+    - name: weapon_holder_point
+      guid: eabd791c6e249174e93643ed411fdec5
+      position: {x: 25.886292, y: -0.00000054495, z: 0}
+      rotation: {x: 0, y: 0, z: -0.017550182, w: 0.99984604}
+      length: 1.0860478
+      parentId: 9
+      color:
+        serializedVersion: 2
+        rgba: 4278255360
     parts:
     - spritePosition:
         x: 23

@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: e6faa2455a5743743a9f4a489680ae67, type: 3}
       propertyPath: m_Name
-      value: Skeleton_running
+      value: SkeletonRunning
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: e6faa2455a5743743a9f4a489680ae67, type: 3}
       propertyPath: m_LocalPosition.x

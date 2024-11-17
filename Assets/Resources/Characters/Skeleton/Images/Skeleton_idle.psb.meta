@@ -118,9 +118,9 @@ ScriptedImporter:
         rgba: 4278190335
     - name: hood_front
       guid: 8e64fe85db8782740af870f38b114fbe
-      position: {x: 43.71091, y: -0.000008472831, z: 0}
-      rotation: {x: 0, y: 0, z: 0.04615513, w: 0.9989343}
-      length: 11.318482
+      position: {x: 43.710915, y: -0.000011513932, z: 0}
+      rotation: {x: 0, y: 0, z: 0.046155214, w: 0.9989343}
+      length: 11.3184805
       parentId: 2
       color:
         serializedVersion: 2
@@ -128,8 +128,8 @@ ScriptedImporter:
     - name: head
       guid: 9466f3628f97f1f44b0a447a3a2d3dcc
       position: {x: 30.911526, y: 2.7745895, z: 0}
-      rotation: {x: 0, y: 0, z: 0.73141, w: 0.68193805}
-      length: 43.71091
+      rotation: {x: 0, y: 0, z: 0.73140997, w: 0.6819381}
+      length: 43.710915
       parentId: -1
       color:
         serializedVersion: 2
@@ -145,9 +145,9 @@ ScriptedImporter:
         rgba: 4278243327
     - name: hood_tip
       guid: 10ecdf8ae4596e74597150ecc028e3fc
-      position: {x: -1.2827585, y: -31.282007, z: 0}
-      rotation: {x: 0, y: 0, z: -0.7524093, w: 0.6586959}
-      length: 10.294256
+      position: {x: -1.2827724, y: -31.28201, z: 0}
+      rotation: {x: 0, y: 0, z: -0.75240934, w: 0.65869594}
+      length: 10.294254
       parentId: 1
       color:
         serializedVersion: 2
@@ -493,8 +493,8 @@ ScriptedImporter:
     - name: head
       guid: 9466f3628f97f1f44b0a447a3a2d3dcc
       position: {x: 23.911526, y: -7.225403, z: 0}
-      rotation: {x: 0, y: 0, z: 0.73141, w: 0.68193805}
-      length: 43.71091
+      rotation: {x: 0, y: 0, z: 0.73140997, w: 0.6819381}
+      length: 43.710915
       parentId: -1
       color:
         serializedVersion: 2
@@ -809,8 +809,8 @@ ScriptedImporter:
     - name: head
       guid: 9466f3628f97f1f44b0a447a3a2d3dcc
       position: {x: 29.911526, y: -0.22541046, z: 0}
-      rotation: {x: 0, y: 0, z: 0.73141, w: 0.68193805}
-      length: 43.71091
+      rotation: {x: 0, y: 0, z: 0.73140997, w: 0.6819381}
+      length: 43.710915
       parentId: -1
       color:
         serializedVersion: 2
@@ -2811,11 +2811,11 @@ ScriptedImporter:
       height: 27
     spriteID: 89d65aa67cc46f840acebc8e8acfb3e3
     spriteBone:
-    - name: cloak_back_top_1
+    - name: weapon_holder
       guid: 2fd9c961762261341ba4deba939c7175
       position: {x: 15.018463, y: 23.50652, z: 0}
-      rotation: {x: 0, y: 0, z: -0.861389, w: 0.507946}
-      length: 20.839542
+      rotation: {x: 0, y: 0, z: -0.8725497, w: 0.4885254}
+      length: 25.022738
       parentId: -1
       color:
         serializedVersion: 2
@@ -3062,11 +3062,11 @@ ScriptedImporter:
       color:
         serializedVersion: 2
         rgba: 4294934528
-    - name: cloak_back_top_1
+    - name: weapon_holder
       guid: 2fd9c961762261341ba4deba939c7175
       position: {x: 46.018463, y: 53.50652, z: 0}
-      rotation: {x: 0, y: 0, z: -0.861389, w: 0.507946}
-      length: 20.839544
+      rotation: {x: 0, y: 0, z: -0.8725497, w: 0.4885254}
+      length: 25.022738
       parentId: -1
       color:
         serializedVersion: 2
@@ -3074,7 +3074,7 @@ ScriptedImporter:
     - name: head
       guid: 9466f3628f97f1f44b0a447a3a2d3dcc
       position: {x: 61.911526, y: 51.77459, z: 0}
-      rotation: {x: 0, y: 0, z: 0.73141, w: 0.68193805}
+      rotation: {x: 0, y: 0, z: 0.73140997, w: 0.6819381}
       length: 43.71091
       parentId: -1
       color:
@@ -3109,8 +3109,8 @@ ScriptedImporter:
         rgba: 4278255360
     - name: hood_front
       guid: 8e64fe85db8782740af870f38b114fbe
-      position: {x: 43.71091, y: -0.000008705684, z: 0}
-      rotation: {x: 0, y: 0, z: 0.046155136, w: 0.9989343}
+      position: {x: 43.71091, y: -0.000015573209, z: 0}
+      rotation: {x: 0, y: 0, z: 0.046155214, w: 0.9989343}
       length: 11.318482
       parentId: 5
       color:
@@ -3134,6 +3134,15 @@ ScriptedImporter:
       color:
         serializedVersion: 2
         rgba: 4286578943
+    - name: weapon_holder_point
+      guid: e58f0b014ea11364cb6ab69fa3b5f60b
+      position: {x: 25.022738, y: 0.0000027009542, z: 0}
+      rotation: {x: 0, y: 0, z: -0.035810947, w: 0.9993586}
+      length: 1.6042522
+      parentId: 4
+      color:
+        serializedVersion: 2
+        rgba: 4278255615
     parts:
     - spritePosition:
         x: 31

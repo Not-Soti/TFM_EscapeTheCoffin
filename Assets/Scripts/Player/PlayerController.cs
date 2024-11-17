@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour, IBulletTarget
 
     public GameObject idlePrefab;
     public GameObject runningPrefab;
+    public GameObject weaponPrefab;
+
+    private Rigidbody2D rigidBody;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start(){
@@ -42,6 +46,8 @@ public class PlayerController : MonoBehaviour, IBulletTarget
         if(Physics2D.Raycast(transform.position, Vector3.up, 1f)){
            // Debug.Log("STM - Raycast activated");
         }
+
+        updateWeaponPosition();
     }
 
     void FixedUpdate() {
@@ -53,11 +59,13 @@ public class PlayerController : MonoBehaviour, IBulletTarget
         Debug.Log("PlayerController::onShootReceived");
     }
 
-    //MARK: Private
+    private void updateWeaponPosition(){
+        GameObject weaponHolderBone = null;
 
-    private Rigidbody2D rigidBody;
-    private Animator animator;
-    
-
-
+        if(GameObject.Find("weapon_holder_point")) {
+            GameObject bone = GameObject.Find("weapon_holder_point").gameObject;
+            weaponPrefab.transform.position = bone.transform.position;
+            weaponPrefab.transform.rotation = bone.transform.rotation;
+        }
+    }
 }
