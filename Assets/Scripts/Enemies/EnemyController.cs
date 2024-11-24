@@ -75,7 +75,6 @@ public class EnemyController : MonoBehaviour, IBulletTarget
         }
     }
 
-    /* TODO - Create Bullet superclass and extend for different types of bullets, having a origin and target that can be both player or enemies*/
     public void shootBullet() {
         GameObject bullet = Instantiate(bulletPrefab, new Vector3(0,0,0), Quaternion.identity);
         bullet.GetComponent<BulletController>().initialize(gameObject, player);

@@ -32,7 +32,7 @@ public class BulletController : MonoBehaviour {
 
     public void shoot() {
         if(target != null){
-            
+            //Shoot the enemy
             Vector3 shooterPosition = shooter.transform.position;
             Vector3 targetPosition = target.transform.position;
             
@@ -41,8 +41,7 @@ public class BulletController : MonoBehaviour {
             Vector3 direction = targetPosition - shooterPosition;
             rigidBody.velocity = 20 *  direction.normalized; 
         } else {
-            //Straight shoot. TODO - Remove. This exists to bypass
-            //getting the closes enemy when the player shoots
+            //Straight shoot
             Vector3 shooterPosition = shooter.transform.position;
             transform.position = shooterPosition;
             Vector3 direction = new Vector3(1, 0, 0);
