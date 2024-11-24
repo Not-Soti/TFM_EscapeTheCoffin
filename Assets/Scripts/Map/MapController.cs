@@ -12,13 +12,17 @@ public class MapController : MonoBehaviour
     public GameObject finishLevelBeaconPrefab;
     
     public List<GameObject> enemyPool;
-
+    private List<GameObject> enemiesInScene;
 
     private List<Room> availableRooms;
 
     // Stores the map as a matrix, storing the relative coordinates of the matrix where
     // a room is and its value.
     private Dictionary<Vector2Int, Room> placedRooms;
+
+    public List<GameObject> getEnemiesInScene(){
+        return enemiesInScene;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +33,8 @@ public class MapController : MonoBehaviour
 
         availableRooms = new List<Room>();
         placedRooms = new Dictionary<Vector2Int, Room>();
+
+        enemiesInScene = new List<GameObject>();
 
         foreach (var roomPrefab in availableRoomPrefabs)
         {
@@ -193,5 +199,6 @@ public class MapController : MonoBehaviour
         GameObject enemy = enemyPool.ElementAt(Random.Range(0, enemyPool.Count));
         GameObject instance = Instantiate(enemy, room.prefab.transform.position, Quaternion.identity);
         instance.GetComponent<EnemyController>().initialize(GameObject.Find("MainCharacter").gameObject);
+        enemiesInScene.Add(instance);
     }
 }

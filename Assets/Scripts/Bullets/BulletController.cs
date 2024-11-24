@@ -54,8 +54,10 @@ public class BulletController : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        IBulletTarget collisionTarget = collision.gameObject.GetComponent<IBulletTarget>();
+        if(collisionTarget != null){
+            collisionTarget.onShootReceived();   
+        }
         Destroy(gameObject);
-        IBulletTarget target = collision.gameObject.GetComponent<IBulletTarget>();
-        target.onShootReceived();        
     }
 }

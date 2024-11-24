@@ -82,6 +82,12 @@ public class EnemyController : MonoBehaviour, IBulletTarget
     }
 
     public void onShootReceived() {
+        GameObject map = GameObject.Find("Map");
+        if(map != null) {
+            List<GameObject> enemies = map.GetComponent<MapController>().getEnemiesInScene();
+
+            enemies.Remove(gameObject);
+        }
         Destroy(gameObject);
     }
 
