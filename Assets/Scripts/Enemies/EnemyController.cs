@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour, IBulletTarget
     private GameObject player;
     public float speed;
     public GameObject bulletPrefab;
+    public GameObject targetMark;
     
     private float lastMovementTimeSeconds;
 
@@ -21,6 +22,7 @@ public class EnemyController : MonoBehaviour, IBulletTarget
         animator = GetComponent<Animator>();
 
         lastMovementTimeSeconds = Time.time;
+        targetMark.SetActive(false);
     }
 
     public void initialize(GameObject player){
@@ -89,6 +91,10 @@ public class EnemyController : MonoBehaviour, IBulletTarget
             enemies.Remove(gameObject);
         }
         Destroy(gameObject);
+    }
+
+    public void setAsClosestEnemy(bool isClosestEnemy){
+        targetMark.SetActive(isClosestEnemy);
     }
 
     private enum EnemyAnimationState {

@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour, IBulletTarget
         updateWeaponPosition();
         updateClosestEnemy();
         updateFacingDirection();
+
+        //STM - TODO - si no se consigue apuntar con el arma al enemigo hacer que al enemigo le aparezca una marca en la cabeza o algo asi 
     }
 
     void FixedUpdate() {
@@ -83,8 +85,15 @@ public class PlayerController : MonoBehaviour, IBulletTarget
                 closestEnemy = null;
             } else {
                 GameObject enemy = enemies.OrderBy(enemy => Vector3.Distance(gameObject.transform.position, enemy.transform.position)).FirstOrDefault();
-                if(Vector3.Distance(gameObject.transform.position, enemy.transform.position) <= autoAimDistance){
+
+                if(closestEnemy != null && enemy != closestEnemy){
+                    closestEnemy.GetComponent<EnemyController>().setAsClosestEnemy(false);
+                }
+                
+                if(Vector3.Distance(gameObject.transform.position, enemy.transform.position) <= autoAimDistance){         
+                    enemy.GetComponent<EnemyController>().setAsClosestEnemy(true);         
                     closestEnemy = enemy;
+                    //closestEnemy.GetComponent<EnemyController>().targetMark.SetActive(true);
 
                     //Debug 
                     var raycastHeading = (enemy.transform.position - gameObject.transform.position);
@@ -92,6 +101,7 @@ public class PlayerController : MonoBehaviour, IBulletTarget
                     var raycastDirection = raycastHeading / raycastDistance;
                     Debug.DrawRay(gameObject.transform.position, raycastDirection * autoAimDistance, Color.red);
                 } else {
+                    enemy.GetComponent<EnemyController>().setAsClosestEnemy(false);
                     closestEnemy = null;
                 }
             }
