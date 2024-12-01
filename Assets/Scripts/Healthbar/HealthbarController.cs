@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class HealthbarController : MonoBehaviour
 {
-
     public GameObject player;
 
     private Slider slider;
@@ -31,7 +30,7 @@ public class HealthbarController : MonoBehaviour
         var playerController = player.GetComponent<PlayerController>();
         if(playerController != null){
             var currentHealth = playerController.getCurrentHealth();
-             slider.value = currentHealth/(float)maxHealth;
-        }
+            slider.value = currentHealth/(float)maxHealth;
+        }        
     }
 }
