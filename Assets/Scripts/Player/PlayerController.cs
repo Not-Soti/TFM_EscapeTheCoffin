@@ -5,8 +5,11 @@ using System.Linq;
 
 public class PlayerController : MonoBehaviour, IBulletTarget
 {
-    public Joystick movementJoystick;
     public float moveSpeed = 5.0f;
+    public int maxHealth;
+    private int currentHealth;
+
+    public Joystick movementJoystick;
 
     public GameObject idlePrefab;
     public GameObject runningPrefab;
@@ -24,6 +27,8 @@ public class PlayerController : MonoBehaviour, IBulletTarget
 
         idlePrefab.SetActive(true);
         runningPrefab.SetActive(false);
+
+        currentHealth = maxHealth;
     }
 
 
@@ -59,6 +64,7 @@ public class PlayerController : MonoBehaviour, IBulletTarget
 
     public void onShootReceived() {
         Debug.Log("PlayerController::onShootReceived");
+        currentHealth--;
     }
 
     private void updateWeaponPosition(){
@@ -118,4 +124,8 @@ public class PlayerController : MonoBehaviour, IBulletTarget
             transform.localScale = new Vector3(facingDirection, 1f, 1f);
         }
     } 
+
+    public int getCurrentHealth(){
+        return currentHealth;
+    }
 }
