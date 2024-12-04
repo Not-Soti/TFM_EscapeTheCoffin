@@ -189,7 +189,9 @@ public class MapController : MonoBehaviour
             }
         }
         
-        Room exitRoom = edgeRooms.ElementAt(Random.Range(0, edgeRooms.Count));
+        Room exitRoom = edgeRooms.Count > 0 ? 
+            edgeRooms.ElementAt(Random.Range(0, edgeRooms.Count))
+            : placedRooms.ElementAt(Random.Range(0, placedRooms.Count)).Value;
 
         GameObject beacon = Instantiate(finishLevelBeaconPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         beacon.transform.position = exitRoom.prefab.transform.position;

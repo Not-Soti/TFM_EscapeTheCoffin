@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class FinishLevelBeaconController : MonoBehaviour
 {
+
+    public UnityEvent onReach;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +23,9 @@ public class FinishLevelBeaconController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerController playerController = collision.collider.GetComponent<PlayerController>();
-        if(playerController != null){
-            SceneManager.LoadScene("LobbyScene");
+        if(playerController != null){            
+            var level = GameObject.Find("LevelController").GetComponent<LevelController>();
+            level.onFloorFinished();            
         }
     }
 }

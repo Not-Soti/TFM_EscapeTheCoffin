@@ -22,7 +22,8 @@ public class StartGameDoorController : MonoBehaviour
     {
         PlayerController playerController = collision.collider.GetComponent<PlayerController>();
         if(playerController != null){
-            SceneManager.LoadScene("Level1");
+            var level = GameObject.Find("LevelController").GetComponent<LevelController>();
+            level.onFloorFinished();       
         }
     }
 
