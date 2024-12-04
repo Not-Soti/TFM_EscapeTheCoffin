@@ -37,6 +37,12 @@ public class EnemyController : MonoBehaviour, IBulletTarget
     }
 
     private void doFacePlayer(){
+        if(player == null){
+            var playerInScene = GameObject.Find("MainCharacterSkeleton");
+            if(playerInScene != null){
+                player = playerInScene.gameObject;
+            }
+        }
         Vector3 dir = player.transform.position - transform.position;
         if (dir.x < 0f) {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
