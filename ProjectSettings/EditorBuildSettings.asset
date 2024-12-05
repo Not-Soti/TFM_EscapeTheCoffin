@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 8167207519a9f294a8fa6faa7dda2f75
+  - enabled: 1
+    path: Assets/Scenes/FinalBoss.unity
+    guid: 4aa72be8dcf16044ca17c9a6bacbc9e8
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: fb66a2e80aaf33844be410b000f810bd, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: c7505b040e468e242b63ac93a5386f02, type: 2}
