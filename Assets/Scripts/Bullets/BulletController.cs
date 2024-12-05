@@ -39,6 +39,9 @@ public class BulletController : MonoBehaviour {
             this.transform.position = shooterPosition;
             
             Vector3 direction = targetPosition - shooterPosition;
+            if(direction.x < 1){
+                transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+            }
             rigidBody.velocity = 20 *  direction.normalized; 
         } else {
             //Straight shoot
