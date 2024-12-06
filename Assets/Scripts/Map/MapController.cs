@@ -12,7 +12,7 @@ public class MapController : MonoBehaviour
     public GameObject finishLevelBeaconPrefab;
     
     public List<GameObject> enemyPool;
-    private List<GameObject> enemiesInScene;
+    protected List<GameObject> enemiesInScene;
 
     private List<Room> availableRooms;
 
@@ -20,12 +20,12 @@ public class MapController : MonoBehaviour
     // a room is and its value.
     private Dictionary<Vector2Int, Room> placedRooms;
 
-    public List<GameObject> getEnemiesInScene(){
+    virtual public List<GameObject> getEnemiesInScene(){
         return enemiesInScene;
     }
 
     // Start is called before the first frame update
-    void Start()
+    virtual public void Start()
     {
         if(roomPrefabResourceFolder == null){
             throw new System.Exception("Defining roomPrefabResourceFolder is mandatory");

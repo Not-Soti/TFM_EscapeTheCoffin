@@ -99,7 +99,6 @@ public class PlayerController : MonoBehaviour, IBulletTarget
                 if(Vector3.Distance(gameObject.transform.position, enemy.transform.position) <= autoAimDistance){         
                     enemy.GetComponent<EnemyController>().setAsClosestEnemy(true);         
                     closestEnemy = enemy;
-                    //closestEnemy.GetComponent<EnemyController>().targetMark.SetActive(true);
 
                     //Debug 
                     var raycastHeading = (enemy.transform.position - gameObject.transform.position);

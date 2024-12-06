@@ -97,8 +97,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0049790144, y: 1.2572526}
-  m_Size: {x: 0.6892054, y: 2.4489806}
+  m_Offset: {x: -0.0049790144, y: -0.2283864}
+  m_Size: {x: 0.6892054, y: 2.2825198}
   m_Direction: 0
 --- !u!95 &8983914077438748035
 Animator:
@@ -171,7 +171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 8be645c7edfe15040b0c95034fd930a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.77
+      value: 1.445
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 8be645c7edfe15040b0c95034fd930a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -364,7 +364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5471626144403072667, guid: b5d8a724b6f1a4640ba142f53c4e108d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.639
+      value: 1.306
       objectReference: {fileID: 0}
     - target: {fileID: 5471626144403072667, guid: b5d8a724b6f1a4640ba142f53c4e108d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

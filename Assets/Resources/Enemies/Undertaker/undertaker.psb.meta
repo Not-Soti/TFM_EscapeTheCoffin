@@ -564,7 +564,7 @@ ScriptedImporter:
     - name: arm_front_3
       guid: b35d9d9392ad14543afd8a21c3b64220
       position: {x: 32.044746, y: 0.000026418, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09248905, w: 0.9957138}
+      rotation: {x: 0, y: 0, z: -0.09248897, w: 0.9957138}
       length: 31.114416
       parentId: 1
       color:
@@ -591,8 +591,8 @@ ScriptedImporter:
     - name: feather_2
       guid: a87ab3048154a07479b575046d85f2f8
       position: {x: 20.392597, y: 0.000024099532, z: 0}
-      rotation: {x: 0, y: 0, z: -0.34206724, w: 0.9396755}
-      length: 14.391679
+      rotation: {x: 0, y: 0, z: -0.3420672, w: 0.9396755}
+      length: 14.39168
       parentId: 4
       color:
         serializedVersion: 2
@@ -1285,7 +1285,7 @@ ScriptedImporter:
     - name: arm_front_3
       guid: b35d9d9392ad14543afd8a21c3b64220
       position: {x: 32.044754, y: 0.000004662305, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09248905, w: 0.9957138}
+      rotation: {x: 0, y: 0, z: -0.09248897, w: 0.9957138}
       length: 31.114416
       parentId: 1
       color:
@@ -1639,8 +1639,8 @@ ScriptedImporter:
     - name: feather_2
       guid: a87ab3048154a07479b575046d85f2f8
       position: {x: 139.86647, y: 234.73651, z: 0}
-      rotation: {x: 0, y: 0, z: -0.07190024, w: 0.9974119}
-      length: 14.391676
+      rotation: {x: 0, y: 0, z: -0.0719002, w: 0.99741185}
+      length: 14.391678
       parentId: -1
       color:
         serializedVersion: 2
@@ -1683,8 +1683,8 @@ ScriptedImporter:
         rgba: 4294967040
     - name: feet_back_tentacle_2_2
       guid: dda3a43c18f46654c944477510adc4e1
-      position: {x: 6.520228, y: -0.000023416851, z: 0}
-      rotation: {x: 0, y: 0, z: -0.3789661, w: 0.9254106}
+      position: {x: 6.5202646, y: 0.0000017495267, z: 0}
+      rotation: {x: 0, y: 0, z: -0.37896606, w: 0.9254106}
       length: 9.423378
       parentId: 9
       color:
@@ -1692,18 +1692,18 @@ ScriptedImporter:
         rgba: 4294902015
     - name: feet_back_tentacle_2_4
       guid: fad71dcf8b88d2e4ca5038eb63766b1d
-      position: {x: 8.242279, y: 3.0582302, z: 0}
-      rotation: {x: 0, y: 0, z: -0.04563632, w: 0.9989582}
-      length: 9.051674
+      position: {x: 8.242326, y: 3.0582452, z: 0}
+      rotation: {x: 0, y: 0, z: -0.045636263, w: 0.9989582}
+      length: 9.051675
       parentId: 9
       color:
         serializedVersion: 2
         rgba: 4278255488
     - name: feet_back_tentacle_2_3
       guid: 404c9be8195cde241a04eab2575e5816
-      position: {x: 9.423358, y: -0.0000120583445, z: 0}
-      rotation: {x: 0, y: 0, z: -0.66487837, w: 0.7469517}
-      length: 7.057235
+      position: {x: 9.423332, y: -0.000025270578, z: 0}
+      rotation: {x: 0, y: 0, z: -0.6648783, w: 0.7469518}
+      length: 7.0572357
       parentId: 6
       color:
         serializedVersion: 2
@@ -1711,8 +1711,8 @@ ScriptedImporter:
     - name: feet_back_tentacle_2_1
       guid: c6036bfa1e0a5834086cbd2b347ff8dd
       position: {x: 48.421535, y: -4.2730722, z: 0}
-      rotation: {x: 0, y: 0, z: -0.41297287, w: 0.9107433}
-      length: 6.520217
+      rotation: {x: 0, y: 0, z: -0.41297302, w: 0.91074336}
+      length: 6.5202103
       parentId: 2
       color:
         serializedVersion: 2
@@ -1729,8 +1729,8 @@ ScriptedImporter:
     - name: feet_front_tentacle_2_1
       guid: d1fe62559d281a548bf1a716819c735e
       position: {x: 80.27632, y: 15.09095, z: 0}
-      rotation: {x: 0, y: 0, z: 0.4079578, w: 0.91300076}
-      length: 18.551271
+      rotation: {x: 0, y: 0, z: 0.40795755, w: 0.91300094}
+      length: 18.55128
       parentId: 10
       color:
         serializedVersion: 2
@@ -1746,8 +1746,8 @@ ScriptedImporter:
         rgba: 4294934528
     - name: feet_front_tentacle_2_2
       guid: ab877f54cf34e69449146bfb2839a6b7
-      position: {x: 18.551281, y: -0.000028338305, z: 0}
-      rotation: {x: 0, y: 0, z: 0.654163, w: 0.75635356}
+      position: {x: 18.551283, y: -0.000023023578, z: 0}
+      rotation: {x: 0, y: 0, z: 0.65416354, w: 0.7563531}
       length: 18.053093
       parentId: 11
       color:
@@ -1755,9 +1755,9 @@ ScriptedImporter:
         rgba: 4286578943
     - name: feet_front_tentacle_2_3
       guid: b51f73ff40fdc6f4794dbcc14fd92b71
-      position: {x: 18.053139, y: 0.00003718049, z: 0}
-      rotation: {x: 0, y: 0, z: 0.77105623, w: 0.6367671}
-      length: 13.769788
+      position: {x: 18.053122, y: 0.000022251359, z: 0}
+      rotation: {x: 0, y: 0, z: 0.77105594, w: 0.6367675}
+      length: 13.769787
       parentId: 13
       color:
         serializedVersion: 2
@@ -1783,8 +1783,8 @@ ScriptedImporter:
     - name: feet_front_tentacle_4_2
       guid: 068863eaee0648d49b349f0732139ef8
       position: {x: 10.012872, y: -0.00005379773, z: 0}
-      rotation: {x: 0, y: 0, z: 0.8011387, w: 0.5984788}
-      length: 20.688215
+      rotation: {x: 0, y: 0, z: 0.8011386, w: 0.5984789}
+      length: 20.688213
       parentId: 18
       color:
         serializedVersion: 2
@@ -1800,9 +1800,9 @@ ScriptedImporter:
         rgba: 4294901760
     - name: feet_front_tentacle_4_3
       guid: 4ba1e8d61455556489eab0c940c1d1dc
-      position: {x: 20.688242, y: -0.000057618738, z: 0}
-      rotation: {x: 0, y: 0, z: -0.79053175, w: 0.61242115}
-      length: 13.846968
+      position: {x: 20.688276, y: -0.000045847344, z: 0}
+      rotation: {x: 0, y: 0, z: -0.79053164, w: 0.6124213}
+      length: 13.84697
       parentId: 17
       color:
         serializedVersion: 2
@@ -1819,8 +1819,8 @@ ScriptedImporter:
     - name: arm_front_3
       guid: b35d9d9392ad14543afd8a21c3b64220
       position: {x: 32.04477, y: 0.0000015558908, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09248904, w: 0.9957138}
-      length: 31.11442
+      rotation: {x: 0, y: 0, z: -0.092488974, w: 0.9957138}
+      length: 31.114414
       parentId: 20
       color:
         serializedVersion: 2
@@ -2359,8 +2359,8 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 44.49934, y: 30.128506}
       boneWeight:
-        weight0: 0.78000015
-        weight1: 0.18372153
+        weight0: 0.7800001
+        weight1: 0.18372151
         weight2: 0.036278453
         weight3: 0
         boneIndex0: 3
@@ -2555,8 +2555,8 @@ ScriptedImporter:
     - name: arm_front_3
       guid: b35d9d9392ad14543afd8a21c3b64220
       position: {x: 110.67828, y: 16.344284, z: 0}
-      rotation: {x: 0, y: 0, z: -0.8459376, w: 0.5332819}
-      length: 31.114416
+      rotation: {x: 0, y: 0, z: -0.8459376, w: 0.533282}
+      length: 31.114412
       parentId: -1
       color:
         serializedVersion: 2
@@ -2896,7 +2896,7 @@ ScriptedImporter:
     - name: feather_2
       guid: a87ab3048154a07479b575046d85f2f8
       position: {x: 20.392624, y: 0.00000033237484, z: 0}
-      rotation: {x: 0, y: 0, z: -0.34206727, w: 0.9396755}
+      rotation: {x: 0, y: 0, z: -0.3420672, w: 0.9396755}
       length: 14.391676
       parentId: 3
       color:
@@ -2923,7 +2923,7 @@ ScriptedImporter:
     - name: arm_front_3
       guid: b35d9d9392ad14543afd8a21c3b64220
       position: {x: 32.044758, y: 0.0000028165464, z: 0}
-      rotation: {x: 0, y: 0, z: -0.092489034, w: 0.9957138}
+      rotation: {x: 0, y: 0, z: -0.092488974, w: 0.9957137}
       length: 31.114418
       parentId: 6
       color:
@@ -2950,7 +2950,7 @@ ScriptedImporter:
     - name: arm_back_3
       guid: bbace4b1bc7f2214f9c13e3000503129
       position: {x: 46.76549, y: -0.00000036135543, z: 0}
-      rotation: {x: 0, y: 0, z: -0.0037226414, w: 0.99999315}
+      rotation: {x: 0, y: 0, z: -0.0037226216, w: 0.99999315}
       length: 12.719445
       parentId: 9
       color:
@@ -2995,25 +2995,25 @@ ScriptedImporter:
     - name: feet_back_tentacle_2_1
       guid: c6036bfa1e0a5834086cbd2b347ff8dd
       position: {x: 48.421524, y: -4.273087, z: 0}
-      rotation: {x: 0, y: 0, z: -0.4129729, w: 0.91074336}
-      length: 6.520216
+      rotation: {x: 0, y: 0, z: -0.41297296, w: 0.9107433}
+      length: 6.5202107
       parentId: 11
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: feet_back_tentacle_2_2
       guid: dda3a43c18f46654c944477510adc4e1
-      position: {x: 6.520212, y: -0.00000023522568, z: 0}
+      position: {x: 6.5202093, y: 0.0000002193135, z: 0}
       rotation: {x: 0, y: 0, z: -0.37896606, w: 0.92541057}
-      length: 9.42338
+      length: 9.423378
       parentId: 15
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: feet_back_tentacle_2_3
       guid: 404c9be8195cde241a04eab2575e5816
-      position: {x: 9.423379, y: 0.0000010559156, z: 0}
-      rotation: {x: 0, y: 0, z: -0.6648783, w: 0.7469517}
+      position: {x: 9.423378, y: 0.000003399653, z: 0}
+      rotation: {x: 0, y: 0, z: -0.66487825, w: 0.7469518}
       length: 7.0572357
       parentId: 16
       color:
@@ -3049,25 +3049,25 @@ ScriptedImporter:
     - name: feet_front_tentacle_2_1
       guid: d1fe62559d281a548bf1a716819c735e
       position: {x: 80.27633, y: 15.090953, z: 0}
-      rotation: {x: 0, y: 0, z: 0.40795782, w: 0.9130008}
-      length: 18.55127
+      rotation: {x: 0, y: 0, z: 0.40795755, w: 0.91300094}
+      length: 18.55128
       parentId: 19
       color:
         serializedVersion: 2
         rgba: 4294901888
     - name: feet_front_tentacle_2_2
       guid: ab877f54cf34e69449146bfb2839a6b7
-      position: {x: 18.551277, y: -0.000011355058, z: 0}
-      rotation: {x: 0, y: 0, z: 0.65416306, w: 0.75635356}
-      length: 18.05309
+      position: {x: 18.551285, y: -0.0000005336358, z: 0}
+      rotation: {x: 0, y: 0, z: 0.65416354, w: 0.75635314}
+      length: 18.053091
       parentId: 21
       color:
         serializedVersion: 2
         rgba: 4286578943
     - name: feet_front_tentacle_2_3
       guid: b51f73ff40fdc6f4794dbcc14fd92b71
-      position: {x: 18.053091, y: 0.0000113123, z: 0}
-      rotation: {x: 0, y: 0, z: 0.77105623, w: 0.63676715}
+      position: {x: 18.053097, y: -0.0000013415993, z: 0}
+      rotation: {x: 0, y: 0, z: 0.771056, w: 0.63676745}
       length: 13.769784
       parentId: 22
       color:
@@ -3103,16 +3103,16 @@ ScriptedImporter:
     - name: feet_front_tentacle_4_2
       guid: 068863eaee0648d49b349f0732139ef8
       position: {x: 10.012884, y: 0.0000010984104, z: 0}
-      rotation: {x: 0, y: -0, z: 0.80113876, w: 0.5984787}
-      length: 20.688217
+      rotation: {x: 0, y: -0, z: 0.8011386, w: 0.5984789}
+      length: 20.688213
       parentId: 26
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: feet_front_tentacle_4_3
       guid: 4ba1e8d61455556489eab0c940c1d1dc
-      position: {x: 20.688213, y: -0.0000154161, z: 0}
-      rotation: {x: 0, y: 0, z: -0.7905318, w: 0.61242104}
+      position: {x: 20.688217, y: 0.0000008185002, z: 0}
+      rotation: {x: 0, y: 0, z: -0.79053164, w: 0.6124213}
       length: 13.84697
       parentId: 27
       color:
@@ -3175,7 +3175,7 @@ ScriptedImporter:
       order: 0
     dimension: {x: 0, y: 0}
     characterGroups: []
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5660378}
     boneReadOnly: 0
   sharedRigSpriteImportData: []
   sharedRigCharacterData:
@@ -3236,8 +3236,8 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
-  documentPivot: {x: 0.5, y: 0}
-  documentAlignment: 7
+  documentPivot: {x: 0.5, y: 0.5660378}
+  documentAlignment: 9
   importHiddenLayers: 0
   layerMappingOption: 2
   generatePhysicsShape: 0
