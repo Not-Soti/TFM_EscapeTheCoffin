@@ -10,9 +10,8 @@ public class EnemyController : MonoBehaviour, IBulletTarget
     public GameObject bulletPrefab;
     public GameObject targetMark;
 
-    public int maxLife;
-
-    protected int currentLife;
+    public int maxHealth;
+    protected int currentHealth;
     
     protected float lastMovementTimeSeconds;
 
@@ -27,7 +26,7 @@ public class EnemyController : MonoBehaviour, IBulletTarget
 
         lastMovementTimeSeconds = Time.time;
         targetMark.SetActive(false);
-        currentLife = maxLife;
+        currentHealth = maxHealth;
     }
 
     public void initialize(GameObject player){
@@ -41,7 +40,7 @@ public class EnemyController : MonoBehaviour, IBulletTarget
         performAction();
     }
 
-    private void doFacePlayer(){
+    protected virtual void doFacePlayer(){
         if(player == null){
             var playerInScene = GameObject.Find("MainCharacterSkeleton");
             if(playerInScene != null){
@@ -49,10 +48,10 @@ public class EnemyController : MonoBehaviour, IBulletTarget
             }
         }
         Vector3 dir = player.transform.position - transform.position;
-        if (dir.x < 0f) {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        } else {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            if (dir.x < 0f) {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            } else {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
     }
 
@@ -96,8 +95,8 @@ public class EnemyController : MonoBehaviour, IBulletTarget
     }
 
     public void onShootReceived() {
-        this.currentLife--;
-        if(currentLife <= 0){
+        this.currentHealth--;
+        if(currentHealth <= 0){
             GameObject map = GameObject.Find("Map");
             if(map != null) {
                 List<GameObject> enemies = map.GetComponent<MapController>().getEnemiesInScene();
@@ -110,6 +109,10 @@ public class EnemyController : MonoBehaviour, IBulletTarget
 
     public void setAsClosestEnemy(bool isClosestEnemy){
         targetMark.SetActive(isClosestEnemy);
+    }
+
+    public int getCurrentHealth() {
+        return currentHealth;
     }
 
     protected enum EnemyAnimationState {

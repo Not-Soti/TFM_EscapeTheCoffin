@@ -22,13 +22,33 @@ public class UndertakerController : EnemyController
                 animator.SetInteger("action", (int) EnemyAnimationState.Running);
                 direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
                 rigidBody.velocity = direction * speed;   
-                
+
             } else {
                 animator.SetInteger("action", (int) EnemyAnimationState.Attacking);
                 rigidBody.velocity = direction * speed;   
             }
 
             lastMovementTimeSeconds = now;
+        }
+    }
+
+        protected override void doFacePlayer(){
+        if(player == null){
+            var playerInScene = GameObject.Find("MainCharacterSkeleton");
+            if(playerInScene != null){
+                player = playerInScene.gameObject;
+            }
+        }
+        Vector3 dir = player.transform.position - transform.position;
+
+        var sprite = gameObject.transform.Find("undertaker");
+        if(sprite != null){
+            var currentScale = sprite.gameObject.transform.localScale;
+            if (dir.x < 0f) {
+                sprite.gameObject.transform.localScale = new Vector3(Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);
+            } else {
+                sprite.gameObject.transform.localScale = new Vector3(-Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);
+            }
         }
     }
 }
