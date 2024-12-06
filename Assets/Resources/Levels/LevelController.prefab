@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxFloors: 3
   audioSource: {fileID: 526625313786673575}
-  lobbyMusic: {fileID: 0}
-  dungeonMusic: {fileID: 0}
+  lobbyMusic: {fileID: 8300000, guid: a12689eccb081584cbe03ba97cbf5141, type: 3}
+  dungeonMusic: {fileID: 8300000, guid: a06fcb0174615b54d8a482b6d0508523, type: 3}
   finalBossMusic: {fileID: 8300000, guid: 27e79474482f24c499bd139bf23991bf, type: 3}
 --- !u!82 &526625313786673575
 AudioSource:

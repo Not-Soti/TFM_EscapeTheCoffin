@@ -12,13 +12,33 @@ public class LevelController : MonoBehaviour
     public AudioClip lobbyMusic;
     public AudioClip dungeonMusic;
     public AudioClip finalBossMusic;
+
+    private LevelController instance;
     
 
-    void Start(){
-        audioSource = GetComponent<AudioSource>();
+    void Awake(){
+        Debug.Log("STM - Awake");
+        DontDestroyOnLoad(this);
 
-        DontDestroyOnLoad(this.gameObject);
-        currentFloor = 0;
+        if(instance == null){
+            Debug.Log("STM - instance == null");
+            instance = this;
+
+            audioSource = GetComponent<AudioSource>();
+
+
+            currentFloor = 0;
+
+            audioSource.Stop();
+            if(lobbyMusic != null){
+                audioSource.clip = lobbyMusic;
+                audioSource.Play();   
+            }
+        } else {
+            Debug.Log("STM - instance NOT null");
+            Destroy(gameObject);
+        }
+        
     }
 
     public void onFloorFinished(){
@@ -28,10 +48,12 @@ public class LevelController : MonoBehaviour
         if(currentFloor < maxFloors){
             SceneManager.LoadScene("Level1");
 
-            audioSource.Stop();
-            if(dungeonMusic != null){
-                audioSource.clip = dungeonMusic;
-                audioSource.Play();   
+            if(audioSource.clip != dungeonMusic){
+                audioSource.Stop();
+                if(dungeonMusic != null){
+                    audioSource.clip = dungeonMusic;
+                    audioSource.Play();   
+                }
             }
 
         } else if(currentFloor == maxFloors){
@@ -48,6 +70,7 @@ public class LevelController : MonoBehaviour
     }
 
     public void resetFloors(){
+        Debug.Log("STM - reset floors");
         currentFloor = 0;
         SceneManager.LoadScene("LobbyScene");
 
