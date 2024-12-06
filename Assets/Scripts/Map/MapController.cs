@@ -53,7 +53,7 @@ public class MapController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    virtual public void Update()
     {
         
     }
@@ -100,7 +100,6 @@ public class MapController : MonoBehaviour
             }
 
 
-            //Debug.LogFormat("STM - for room \n{0}\n generating room\n {1}", currentRoom.ToString(), newRoom.ToString());
 
             GameObject newRoomPrefab = Instantiate(newRoom.prefab, new Vector3(0,0,0), Quaternion.identity);
             newRoom.setPrefab(newRoomPrefab);
@@ -128,9 +127,6 @@ public class MapController : MonoBehaviour
                     newRoomY,
                     0
                 ) + currentRoom.prefab.transform.position;
-
-                
-            //Debug.LogFormat("STM - currentRoomDistanceCenterToExitDoor = {0}\n newRoomDistanceCenterToEntryDoor = {1}\n currentRoomPosition = {2}\n newRoomPosition = {3}", currentRoomDistanceCenterToExitDoor, newRoomDistanceCenterToEntryDoor, currentRoom.prefab.transform.position, newRoomPosition);
 
             newRoom.prefab.transform.position = newRoomPosition;
 

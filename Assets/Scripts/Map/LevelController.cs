@@ -17,11 +17,9 @@ public class LevelController : MonoBehaviour
     
 
     void Awake(){
-        Debug.Log("STM - Awake");
         DontDestroyOnLoad(this);
 
         if(instance == null){
-            Debug.Log("STM - instance == null");
             instance = this;
 
             audioSource = GetComponent<AudioSource>();
@@ -35,7 +33,6 @@ public class LevelController : MonoBehaviour
                 audioSource.Play();   
             }
         } else {
-            Debug.Log("STM - instance NOT null");
             Destroy(gameObject);
         }
         
@@ -43,7 +40,6 @@ public class LevelController : MonoBehaviour
 
     public void onFloorFinished(){
         currentFloor++;
-        Debug.LogFormat("STM - currentFloor = {0}", currentFloor);
         
         if(currentFloor < maxFloors){
             SceneManager.LoadScene("Level1");
@@ -70,14 +66,20 @@ public class LevelController : MonoBehaviour
     }
 
     public void resetFloors(){
-        Debug.Log("STM - reset floors");
-        currentFloor = 0;
+        //currentFloor = 0;
         SceneManager.LoadScene("LobbyScene");
 
+    /*
         audioSource.Stop();
         if(lobbyMusic != null){
             audioSource.clip = lobbyMusic;
             audioSource.Play();   
         }
+
+       
+    */
+        Destroy(gameObject);
     }
+    
+    
 }

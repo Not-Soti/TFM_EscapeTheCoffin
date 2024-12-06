@@ -88,7 +88,6 @@ public class EnemyController : MonoBehaviour, IBulletTarget
     }
 
     public void shootBullet() {
-        Debug.Log("STM - shoot bullet");
         GameObject bullet = Instantiate(bulletPrefab, new Vector3(0,0,0), Quaternion.identity);
         bullet.GetComponent<BulletController>().initialize(gameObject, player);
         bullet.GetComponent<BulletController>().shoot();    

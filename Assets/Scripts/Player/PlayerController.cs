@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour, IBulletTarget
         updateClosestEnemy();
         updateFacingDirection();
 
-        //STM - TODO - si no se consigue apuntar con el arma al enemigo hacer que al enemigo le aparezca una marca en la cabeza o algo asi 
     }
 
     void FixedUpdate() {
