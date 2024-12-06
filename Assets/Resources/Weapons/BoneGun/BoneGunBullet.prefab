@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2670234896124011213}
   - component: {fileID: 1329257176357230472}
   - component: {fileID: 4587667902301176168}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BoneGunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -51,6 +51,7 @@ MonoBehaviour:
   speed: 6
   bulletPrefab: {fileID: 8830410701677037245, guid: 715e1ace19a2ec147940233f6917862b, type: 3}
   targetMark: {fileID: 3080193068486428221}
+  maxLife: 1
 --- !u!50 &5363617011135214336
 Rigidbody2D:
   serializedVersion: 4

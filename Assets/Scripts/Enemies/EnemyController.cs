@@ -5,15 +5,19 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour, IBulletTarget
 {
 
-    private GameObject player;
+    protected GameObject player;
     public float speed;
     public GameObject bulletPrefab;
     public GameObject targetMark;
-    
-    private float lastMovementTimeSeconds;
 
-    private Animator animator;
-    private Rigidbody2D rigidBody;
+    public int maxLife;
+
+    protected int currentLife;
+    
+    protected float lastMovementTimeSeconds;
+
+    protected Animator animator;
+    protected Rigidbody2D rigidBody;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,7 @@ public class EnemyController : MonoBehaviour, IBulletTarget
 
         lastMovementTimeSeconds = Time.time;
         targetMark.SetActive(false);
+        currentLife = maxLife;
     }
 
     public void initialize(GameObject player){
@@ -51,7 +56,7 @@ public class EnemyController : MonoBehaviour, IBulletTarget
         }
     }
 
-    private void performAction() {
+    protected virtual void performAction() {
         float now = Time.time;
         float timeOut = Random.Range(2, 5);
 
@@ -84,26 +89,30 @@ public class EnemyController : MonoBehaviour, IBulletTarget
     }
 
     public void shootBullet() {
+        Debug.Log("STM - shoot bullet");
         GameObject bullet = Instantiate(bulletPrefab, new Vector3(0,0,0), Quaternion.identity);
         bullet.GetComponent<BulletController>().initialize(gameObject, player);
         bullet.GetComponent<BulletController>().shoot();    
     }
 
     public void onShootReceived() {
-        GameObject map = GameObject.Find("Map");
-        if(map != null) {
-            List<GameObject> enemies = map.GetComponent<MapController>().getEnemiesInScene();
+        this.currentLife--;
+        if(currentLife <= 0){
+            GameObject map = GameObject.Find("Map");
+            if(map != null) {
+                List<GameObject> enemies = map.GetComponent<MapController>().getEnemiesInScene();
 
-            enemies.Remove(gameObject);
+                enemies.Remove(gameObject);
+            }
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
     public void setAsClosestEnemy(bool isClosestEnemy){
         targetMark.SetActive(isClosestEnemy);
     }
 
-    private enum EnemyAnimationState {
+    protected enum EnemyAnimationState {
         Idle = 0,
         Running = 1,
         Attacking = 2,

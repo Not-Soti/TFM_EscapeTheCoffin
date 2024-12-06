@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 494467434033629459}
   - component: {fileID: 814958460582908071}
   - component: {fileID: 8220067316591495536}
-  - component: {fileID: 5902621531379071610}
   - component: {fileID: 8983914077438748035}
+  - component: {fileID: 8615896617944485149}
   m_Layer: 0
   m_Name: Undertaker
   m_TagString: Untagged
@@ -99,21 +99,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0049790144, y: 1.2572526}
   m_Size: {x: 0.6892054, y: 2.4489806}
   m_Direction: 0
---- !u!114 &5902621531379071610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73473163807517672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9887ccdaabb9f542b965c745d14d766, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  bulletPrefab: {fileID: 8830410701677037245, guid: 6f04cf253015783439833d1b65ea53b6, type: 3}
-  targetMark: {fileID: 1211533633728042919}
 --- !u!95 &8983914077438748035
 Animator:
   serializedVersion: 5
@@ -135,6 +120,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8615896617944485149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73473163807517672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f0fb2bfba14604d97902e98575ddb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  bulletPrefab: {fileID: 8830410701677037245, guid: 6f04cf253015783439833d1b65ea53b6, type: 3}
+  targetMark: {fileID: -8653719598885068355, guid: 8be645c7edfe15040b0c95034fd930a6, type: 3}
+  maxLife: 5
 --- !u!1001 &1673074842491090458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,11 +212,6 @@ PrefabInstance:
 --- !u!4 &6793604974972868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 8be645c7edfe15040b0c95034fd930a6, type: 3}
-  m_PrefabInstance: {fileID: 1673074842491090458}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1211533633728042919 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: 8be645c7edfe15040b0c95034fd930a6, type: 3}
   m_PrefabInstance: {fileID: 1673074842491090458}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2928770344992735055

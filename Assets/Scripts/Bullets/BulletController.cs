@@ -61,9 +61,11 @@ public class BulletController : MonoBehaviour {
         if(collisionTarget != null){
 
             //Do not trigger onShootReceived if both shooter and collisionTarget are enemies
+            
             if(!((shooter.GetComponent<EnemyController>() != null) && collisionTarget.GetType() == typeof(EnemyController))){
                 collisionTarget.onShootReceived(); 
             }
+            
         }
         Destroy(gameObject);
     }
