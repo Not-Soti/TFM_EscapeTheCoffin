@@ -96,6 +96,14 @@ public class MapController : MonoBehaviour
                 //Skip placing a room in the same spot
                 continue;
             } else {
+                Debug.Log("instantiateRooms: ______________________________________________");
+                Debug.LogFormat("instantiateRooms: for room {0} - Room {1}", newRoomPositionInMap, newRoom.ToString());
+                Debug.LogFormat("instantiateRooms: Positioning room in {0}", newRoomPositionInMap);
+                Debug.LogFormat("instantiateRooms: Current rooms:");
+                foreach(Vector2 pos in placedRooms.Keys){
+                    Debug.LogFormat("instantiateRooms: {0}", pos);
+                }
+                Debug.Log("instantiateRooms: ______________________________________________");
                 placedRooms[newRoomPositionInMap] = newRoom;
             }
 

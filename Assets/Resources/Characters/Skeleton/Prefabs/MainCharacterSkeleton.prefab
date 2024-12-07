@@ -78,7 +78,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   maxHealth: 5
-  currentHealth: 0
   movementJoystick: {fileID: 0}
   idlePrefab: {fileID: 682981659614161307}
   runningPrefab: {fileID: 2853269307910857756}

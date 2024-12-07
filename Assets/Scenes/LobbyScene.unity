@@ -5437,6 +5437,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5462485015011540415, guid: adaa2e4475a148947b5069291069026c, type: 3}
+      propertyPath: maxFloors
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6007501363204987449, guid: adaa2e4475a148947b5069291069026c, type: 3}
       propertyPath: m_Name
       value: LevelController
