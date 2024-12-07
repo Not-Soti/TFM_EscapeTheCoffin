@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour, IBulletTarget
     protected Rigidbody2D rigidBody;
 
     // Start is called before the first frame update
-    void Start()
+    virtual public void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>(); 
         animator = GetComponent<Animator>();
@@ -42,7 +42,8 @@ public class EnemyController : MonoBehaviour, IBulletTarget
 
     protected virtual void doFacePlayer(){
         if(player == null){
-            var playerInScene = GameObject.Find("MainCharacterSkeleton");
+            //var playerInScene = GameObject.Find("MainCharacterSkeleton");
+            var playerInScene = GameObject.Find("MainCharacter");
             if(playerInScene != null){
                 player = playerInScene.gameObject;
             }
