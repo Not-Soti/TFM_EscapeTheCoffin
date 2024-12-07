@@ -6,6 +6,7 @@ using System.Linq;
 public class BulletController : MonoBehaviour {
 
     public float rotationSpeed;
+    public int bulletSpeed;
 
     private GameObject shooter;
     private GameObject target;
@@ -42,7 +43,7 @@ public class BulletController : MonoBehaviour {
             if(direction.x < 1){
                 transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
             }
-            rigidBody.velocity = 20 *  direction.normalized; 
+            rigidBody.velocity = bulletSpeed *  direction.normalized; 
         } else {
             //Straight shoot
             Vector3 shooterPosition = shooter.transform.position;
@@ -51,7 +52,7 @@ public class BulletController : MonoBehaviour {
             if(shooter.transform.localScale.x == 1){
                 direction = new Vector3(-1, 0, 0);
             }
-            rigidBody.velocity = 20 *  direction; 
+            rigidBody.velocity = bulletSpeed *  direction; 
         }
     }
 

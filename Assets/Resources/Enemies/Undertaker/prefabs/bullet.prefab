@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 0
+  bulletSpeed: 20
 --- !u!60 &117921008781190638
 PolygonCollider2D:
   m_ObjectHideFlags: 0
