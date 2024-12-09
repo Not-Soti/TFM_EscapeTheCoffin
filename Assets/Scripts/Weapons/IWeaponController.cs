@@ -2,7 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IWeaponController{
+public abstract class IWeaponController : MonoBehaviour {
     
-    public void shootBullet(GameObject shooter, GameObject target);
+    public int firingSpeedMillis;
+
+    protected float lastShootTimeSeconds;
+
+    void Start(){
+        lastShootTimeSeconds = Time.time;
+    } 
+    
+    abstract public void shootBullet(GameObject shooter, GameObject target);
 }

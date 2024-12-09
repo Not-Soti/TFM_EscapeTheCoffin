@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour, IBulletTarget
     public GameObject idlePrefab;
     public GameObject runningPrefab;
     public GameObject weaponPrefab;
-
     private Rigidbody2D rigidBody;
     private Animator animator;
     private GameObject closestEnemy;
