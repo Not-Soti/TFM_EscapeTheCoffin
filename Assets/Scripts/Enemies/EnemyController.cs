@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour, IBulletTarget
     protected GameObject player;
     public float speed;
     public GameObject bulletPrefab;
+    public int bulletSpeed;
     public GameObject targetMark;
 
     public int maxHealth;
@@ -90,7 +91,7 @@ public class EnemyController : MonoBehaviour, IBulletTarget
 
     public void shootBullet() {
         GameObject bullet = Instantiate(bulletPrefab, new Vector3(0,0,0), Quaternion.identity);
-        bullet.GetComponent<BulletController>().initialize(gameObject, player);
+        bullet.GetComponent<BulletController>().initialize(gameObject, player, bulletSpeed);
         bullet.GetComponent<BulletController>().shoot();    
     }
 

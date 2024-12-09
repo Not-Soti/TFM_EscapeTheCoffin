@@ -6,7 +6,7 @@ using System.Linq;
 public class BulletController : MonoBehaviour {
 
     public float rotationSpeed;
-    public int bulletSpeed;
+    private int bulletSpeed;
 
     private GameObject shooter;
     private GameObject target;
@@ -16,11 +16,12 @@ public class BulletController : MonoBehaviour {
         transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
     }
 
-    public void initialize(GameObject shooter, GameObject target){
+    public void initialize(GameObject shooter, GameObject target, int bulletSpeed){
         rigidBody = GetComponent<Rigidbody2D>(); 
         
         this.shooter = shooter;
         this.target = target;
+        this.bulletSpeed = bulletSpeed;
 
         Collider2D shooterCollider = this.shooter.GetComponent<Collider2D>();
         Collider2D bulletCollider = GetComponent<Collider2D>();

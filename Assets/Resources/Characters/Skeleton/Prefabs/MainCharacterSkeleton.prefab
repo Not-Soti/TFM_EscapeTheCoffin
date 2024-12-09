@@ -81,7 +81,7 @@ MonoBehaviour:
   movementJoystick: {fileID: 0}
   idlePrefab: {fileID: 682981659614161307}
   runningPrefab: {fileID: 2853269307910857756}
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 3341882834202816469, guid: f70be5db83b5d594399ffe553b401662, type: 3}
 --- !u!95 &4728645091779821739
 Animator:
   serializedVersion: 5

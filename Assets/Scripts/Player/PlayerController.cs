@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour, IBulletTarget
     public GameObject idlePrefab;
     public GameObject runningPrefab;
     public GameObject weaponPrefab;
+    private GameObject instantiatedWeapon;
     private Rigidbody2D rigidBody;
     private Animator animator;
     private GameObject closestEnemy;
@@ -28,6 +29,8 @@ public class PlayerController : MonoBehaviour, IBulletTarget
         runningPrefab.SetActive(false);
 
         currentHealth = maxHealth;
+
+        instantiatedWeapon = Instantiate(weaponPrefab, new Vector3(0,0,0), Quaternion.identity);
     }
 
 
@@ -70,13 +73,16 @@ public class PlayerController : MonoBehaviour, IBulletTarget
 
         if(GameObject.Find("weapon_holder_point")) {
             GameObject bone = GameObject.Find("weapon_holder_point").gameObject;
-            weaponPrefab.transform.position = bone.transform.position;
-            weaponPrefab.transform.rotation = bone.transform.rotation;
+            var weaponScale = instantiatedWeapon.transform.localScale;
+
+            instantiatedWeapon.transform.position = bone.transform.position;
+            instantiatedWeapon.transform.rotation = bone.transform.rotation;
+            instantiatedWeapon.transform.localScale = new Vector3(-gameObject.transform.localScale.x, weaponScale.y, weaponScale.z);
         }
     }
 
     public void shootBullet() {
-        weaponPrefab.GetComponent<IWeaponController>().shootBullet(gameObject, closestEnemy);
+        instantiatedWeapon.GetComponent<IWeaponController>().shootBullet(gameObject, closestEnemy);
     }
 
     private void updateClosestEnemy() {

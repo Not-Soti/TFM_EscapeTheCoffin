@@ -474,6 +474,10 @@ PrefabInstance:
       value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 3133470626363771300, guid: 812139bc52188b74bb30414227e97d0e, type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 8761035802647860211, guid: 8b9968054b5e6ea46aadf252bd2abea0, type: 3}
+    - target: {fileID: 3133470626363771300, guid: 812139bc52188b74bb30414227e97d0e, type: 3}
       propertyPath: movementJoystick
       value: 
       objectReference: {fileID: 2077448982}
@@ -489,12 +493,17 @@ PrefabInstance:
       propertyPath: enemyPool.Array.data[1]
       value: 
       objectReference: {fileID: 3454166132112533601, guid: 18e85737309ef4e4992f0b69518e93d1, type: 3}
+    - target: {fileID: 5057669005680111287, guid: 812139bc52188b74bb30414227e97d0e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6061673345092068759, guid: 812139bc52188b74bb30414227e97d0e, type: 3}
       propertyPath: firingSpeedMillis
       value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057669005680111287, guid: 812139bc52188b74bb30414227e97d0e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 812139bc52188b74bb30414227e97d0e, type: 3}
