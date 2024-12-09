@@ -102,7 +102,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 140
+      y: 524
       width: 118
       height: 106
     spriteID: 9fbb20d7f73b9344695d675f248dcfcf
@@ -113,8 +113,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 140}
-    spritePosition: {x: 5, y: 11}
+    uvTransform: {x: 4, y: 524}
+    spritePosition: {x: 64, y: 84}
   - name: Relleno degradado 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -178,7 +178,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 9fbb20d7f73b9344695d675f248dcfcf
     layerID: 6
-    mosaicPosition: {x: 4, y: 140}
+    mosaicPosition: {x: 4, y: 524}
     flatten: 0
     isImported: 1
     isVisible: 1
