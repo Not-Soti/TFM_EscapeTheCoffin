@@ -8,6 +8,7 @@ public abstract class IWeaponController : MonoBehaviour {
 
     public int firingSpeedMillis;
     public int bulletSpeed;
+    public int range;
 
     protected float lastShootTimeSeconds;
 

@@ -100,3 +100,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3907526581886322862, guid: c2ad56cf792796a43a0abc54f2be570b, type: 3}
   firingSpeedMillis: 1500
   bulletSpeed: 20
+  range: 10

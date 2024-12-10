@@ -13,8 +13,7 @@ public class PlayerController : MonoBehaviour, IBulletTarget
 
     public GameObject idlePrefab;
     public GameObject runningPrefab;
-    private GameObject weaponPrefab;
-    private GameObject instantiatedWeapon;
+    private GameObject instantiatedWeapon = null;
     private Rigidbody2D rigidBody;
     private Animator animator;
     private GameObject closestEnemy;
@@ -32,12 +31,6 @@ public class PlayerController : MonoBehaviour, IBulletTarget
 
         instantiateWeapon();
         
-    }
-
-    private void instantiateWeapon(){
-        var level = GameObject.Find("LevelController").GetComponent<LevelController>();
-        var chosenWeapon = level.getChosenWeapon();
-        instantiatedWeapon = Instantiate(chosenWeapon, new Vector3(0,0,0), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -58,15 +51,20 @@ public class PlayerController : MonoBehaviour, IBulletTarget
             runningPrefab.SetActive(false);
         }
 
-        updateWeaponPosition();
         updateClosestEnemy();
         updateFacingDirection();
-
+        updateWeaponPosition();
     }
 
     void FixedUpdate() {
         Vector2 inputDirection = movementJoystick.Direction;
         rigidBody.velocity = inputDirection * moveSpeed;   
+    }
+
+    private void instantiateWeapon(){
+        var level = GameObject.Find("LevelController").GetComponent<LevelController>();
+        var chosenWeapon = level.getChosenWeapon();
+        instantiatedWeapon = Instantiate(chosenWeapon, new Vector3(0,0,0), Quaternion.identity);
     }
 
     public void onShootReceived() {
@@ -92,7 +90,11 @@ public class PlayerController : MonoBehaviour, IBulletTarget
     }
 
     private void updateClosestEnemy() {
-        int autoAimDistance = 6;
+        if(instantiatedWeapon == null) {
+            return;
+        }
+        
+        int autoAimDistance = instantiatedWeapon.GetComponent<IWeaponController>().range;
         GameObject map = GameObject.Find("Map");
         if(map != null) {
             List<GameObject> enemies = map.GetComponent<MapController>().getEnemiesInScene();
