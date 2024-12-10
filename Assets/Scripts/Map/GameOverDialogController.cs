@@ -10,9 +10,7 @@ public class GameOverTextController : MonoBehaviour
     private bool isShowing;
 
     void Start(){
-        canvasGroup = GetComponent<CanvasGroup>();
-        Debug.LogFormat("STM - {0}", Time.timeScale);
-        
+        canvasGroup = GetComponent<CanvasGroup>();        
         isShowing = false;
         hide();
     }

@@ -13,6 +13,11 @@ public class LevelController : MonoBehaviour
     public AudioClip dungeonMusic;
     public AudioClip finalBossMusic;
 
+    public GameObject emptyGunPrefab;
+    public GameObject boneGunPrefab;
+    public GameObject magicWandPrefab;
+    private GameObject chosenWeapon;
+
     private LevelController instance;
     
 
@@ -32,6 +37,9 @@ public class LevelController : MonoBehaviour
                 audioSource.clip = lobbyMusic;
                 audioSource.Play();   
             }
+
+            chosenWeapon = emptyGunPrefab;
+
         } else {
             Destroy(gameObject);
         }
@@ -40,6 +48,13 @@ public class LevelController : MonoBehaviour
 
     public void onFloorFinished(){
         currentFloor++;
+
+        var isMagicWandUnlocked = getIsMagicWandUnlocked();
+        if(!isMagicWandUnlocked) {
+            chosenWeapon = boneGunPrefab;
+        } else {
+            chosenWeapon = magicWandPrefab;
+        }
         
         if(currentFloor < maxFloors){
             SceneManager.LoadScene("Level1");
@@ -61,25 +76,33 @@ public class LevelController : MonoBehaviour
                 audioSource.Play();   
             }
         } else if(currentFloor > maxFloors){
+
+            //Unlock new weapon the first time the boss is killed
+            unlockMagicWand();
+
             resetFloors();
         }
     }
 
     public void resetFloors(){
-        //currentFloor = 0;
         SceneManager.LoadScene("LobbyScene");
-
-    /*
-        audioSource.Stop();
-        if(lobbyMusic != null){
-            audioSource.clip = lobbyMusic;
-            audioSource.Play();   
-        }
-
-       
-    */
         Destroy(gameObject);
     }
-    
+
+    private void unlockMagicWand(){
+        Debug.Log("STM - LevelController::unlockMagicWand");
+        var storage = new UnlockablesStorage();
+        storage.unlockMagicWand();
+    }
+
+    private bool getIsMagicWandUnlocked(){
+        Debug.Log("STM - LevelController::getIsMagicWandUnlocked");
+        var storage = new UnlockablesStorage();
+        return storage.getIsMagicWandUnlocked();
+    }
+
+    public GameObject getChosenWeapon() {
+        return chosenWeapon;
+    }
     
 }

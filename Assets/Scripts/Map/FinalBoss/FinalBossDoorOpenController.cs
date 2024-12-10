@@ -26,7 +26,8 @@ public class FinalBossDoorController : MonoBehaviour
         PlayerController playerController = collision.collider.GetComponent<PlayerController>();
         if(playerController != null){
             var level = GameObject.Find("LevelController").GetComponent<LevelController>();
-            level.resetFloors();
+            //level.resetFloors();
+            level.onFloorFinished();
         }
     }
 

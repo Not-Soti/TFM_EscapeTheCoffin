@@ -5441,6 +5441,18 @@ PrefabInstance:
       propertyPath: maxFloors
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5462485015011540415, guid: adaa2e4475a148947b5069291069026c, type: 3}
+      propertyPath: boneGunPrefab
+      value: 
+      objectReference: {fileID: 3341882834202816469, guid: f70be5db83b5d594399ffe553b401662, type: 3}
+    - target: {fileID: 5462485015011540415, guid: adaa2e4475a148947b5069291069026c, type: 3}
+      propertyPath: emptyGunPrefab
+      value: 
+      objectReference: {fileID: 5853399264852369752, guid: 6f7714edf221d144e83907f27e5c395d, type: 3}
+    - target: {fileID: 5462485015011540415, guid: adaa2e4475a148947b5069291069026c, type: 3}
+      propertyPath: magicWandPrefab
+      value: 
+      objectReference: {fileID: 8761035802647860211, guid: 8b9968054b5e6ea46aadf252bd2abea0, type: 3}
     - target: {fileID: 6007501363204987449, guid: adaa2e4475a148947b5069291069026c, type: 3}
       propertyPath: m_Name
       value: LevelController

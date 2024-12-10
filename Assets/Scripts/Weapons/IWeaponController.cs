@@ -18,7 +18,6 @@ public abstract class IWeaponController : MonoBehaviour {
     public void shootBullet(GameObject shooter, GameObject target) {
         float currentShootTimestamp = Time.time;
 
-        Debug.LogFormat("STM - current {0} - last {1} > speed {2}", currentShootTimestamp, lastShootTimeSeconds, firingSpeedMillis);
         if((currentShootTimestamp - lastShootTimeSeconds) > (firingSpeedMillis / 1000f)){
             GameObject bullet = Instantiate(bulletPrefab, new Vector3(0,0,0), Quaternion.identity);
             bullet.GetComponent<BulletController>().initialize(shooter, target, bulletSpeed);

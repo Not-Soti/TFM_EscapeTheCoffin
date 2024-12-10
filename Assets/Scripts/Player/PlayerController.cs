@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour, IBulletTarget
 
     public GameObject idlePrefab;
     public GameObject runningPrefab;
-    public GameObject weaponPrefab;
+    private GameObject weaponPrefab;
     private GameObject instantiatedWeapon;
     private Rigidbody2D rigidBody;
     private Animator animator;
@@ -30,9 +30,15 @@ public class PlayerController : MonoBehaviour, IBulletTarget
 
         currentHealth = maxHealth;
 
-        instantiatedWeapon = Instantiate(weaponPrefab, new Vector3(0,0,0), Quaternion.identity);
+        instantiateWeapon();
+        
     }
 
+    private void instantiateWeapon(){
+        var level = GameObject.Find("LevelController").GetComponent<LevelController>();
+        var chosenWeapon = level.getChosenWeapon();
+        instantiatedWeapon = Instantiate(chosenWeapon, new Vector3(0,0,0), Quaternion.identity);
+    }
 
     // Update is called once per frame
     void Update(){
