@@ -48,13 +48,6 @@ public class LevelController : MonoBehaviour
 
     public void onFloorFinished(){
         currentFloor++;
-
-        var isMagicWandUnlocked = getIsMagicWandUnlocked();
-        if(!isMagicWandUnlocked) {
-            chosenWeapon = boneGunPrefab;
-        } else {
-            chosenWeapon = magicWandPrefab;
-        }
         
         if(currentFloor < maxFloors){
             SceneManager.LoadScene("Level1");
@@ -103,6 +96,17 @@ public class LevelController : MonoBehaviour
 
     public GameObject getChosenWeapon() {
         return chosenWeapon;
+    }
+
+    public void setChosenWeapon(string name){
+        if(name.Equals("BoneGun")){
+            chosenWeapon = boneGunPrefab;
+        } else if(name.Equals("MagicWand")){
+            chosenWeapon = magicWandPrefab;
+        }
+
+        var player = GameObject.Find("MainCharacter").GetComponent<PlayerController>();
+        player.instantiateWeapon();
     }
     
 }

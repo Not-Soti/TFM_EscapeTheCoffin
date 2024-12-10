@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8751974307148573985}
   - component: {fileID: 1838323262718226273}
   - component: {fileID: 8123988756714772171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MagicWandBulletPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

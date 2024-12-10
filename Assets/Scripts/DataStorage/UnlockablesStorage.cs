@@ -44,4 +44,8 @@ public class UnlockablesStorage {
         }
     }
 
+    public void reset(){
+        setMagicWandUnlocked(false);
+    }
+
 }

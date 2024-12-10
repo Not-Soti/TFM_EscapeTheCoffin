@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bullet
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: fb6ca3235e615c34cb0a2d66456c4e3d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: fb6ca3235e615c34cb0a2d66456c4e3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.3583119
@@ -75,6 +79,10 @@ PrefabInstance:
     - target: {fileID: -2024263853196833266, guid: fb6ca3235e615c34cb0a2d66456c4e3d, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921145645652776261, guid: fb6ca3235e615c34cb0a2d66456c4e3d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -223,4 +231,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 350
-  bulletSpeed: 15

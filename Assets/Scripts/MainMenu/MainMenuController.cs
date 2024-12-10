@@ -13,4 +13,9 @@ public class MainMenuController : MonoBehaviour
         Application.Quit();
     }
 
+    public void OnClearDataTapped() {
+        var storageManager = new StorageManager();
+        storageManager.clearAll();
+    }
+
 }

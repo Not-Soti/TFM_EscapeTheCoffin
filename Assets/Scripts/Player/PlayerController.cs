@@ -61,7 +61,10 @@ public class PlayerController : MonoBehaviour, IBulletTarget
         rigidBody.velocity = inputDirection * moveSpeed;   
     }
 
-    private void instantiateWeapon(){
+    public void instantiateWeapon(){
+        if(instantiatedWeapon != null){
+            Destroy(instantiatedWeapon);
+        }
         var level = GameObject.Find("LevelController").GetComponent<LevelController>();
         var chosenWeapon = level.getChosenWeapon();
         instantiatedWeapon = Instantiate(chosenWeapon, new Vector3(0,0,0), Quaternion.identity);
