@@ -8,6 +8,8 @@ public class LevelController : MonoBehaviour
 {
     private int currentFloor;
     public int maxFloors;
+    public float volume;
+
     public AudioSource audioSource;
     public AudioClip lobbyMusic;
     public AudioClip dungeonMusic;
@@ -28,7 +30,7 @@ public class LevelController : MonoBehaviour
             instance = this;
 
             audioSource = GetComponent<AudioSource>();
-
+            audioSource.volume = volume;
 
             currentFloor = 0;
 
