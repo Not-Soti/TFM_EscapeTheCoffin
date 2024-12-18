@@ -19,6 +19,8 @@ public class EnemyController : MonoBehaviour, IBulletTarget
     protected Animator animator;
     protected Rigidbody2D rigidBody;
 
+    private List<GameObject> renderedBullets;
+
     // Start is called before the first frame update
     virtual public void Start()
     {
@@ -28,6 +30,7 @@ public class EnemyController : MonoBehaviour, IBulletTarget
         lastMovementTimeSeconds = Time.time;
         targetMark.SetActive(false);
         currentHealth = maxHealth;
+        renderedBullets = new List<GameObject>();
     }
 
     public void initialize(GameObject player){
@@ -91,6 +94,7 @@ public class EnemyController : MonoBehaviour, IBulletTarget
 
     public void shootBullet() {
         GameObject bullet = Instantiate(bulletPrefab, new Vector3(0,0,0), Quaternion.identity);
+        renderedBullets.Add(bullet);
         bullet.GetComponent<BulletController>().initialize(gameObject, player, bulletSpeed);
         bullet.GetComponent<BulletController>().shoot();    
     }
@@ -103,6 +107,11 @@ public class EnemyController : MonoBehaviour, IBulletTarget
                 List<GameObject> enemies = map.GetComponent<MapController>().getEnemiesInScene();
 
                 enemies.Remove(gameObject);
+            }
+            for(int i = 0; i < renderedBullets.Count; i++){
+                var bullet = renderedBullets[i];
+                renderedBullets.Remove(bullet);
+                Destroy(bullet);
             }
             Destroy(gameObject);
         }
