@@ -57,9 +57,9 @@ public class BulletController : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        IBulletTarget collisionTarget = collision.gameObject.GetComponent<IBulletTarget>();
+        IBulletTarget collisionTarget = collider.GetComponent<IBulletTarget>();
         if(collisionTarget != null){
 
             //Do not trigger onShootReceived if both shooter and collisionTarget are enemies
