@@ -490,6 +490,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4876521525587094607, guid: 812139bc52188b74bb30414227e97d0e, type: 3}
+      propertyPath: roomGeneratingDeepness
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876521525587094607, guid: 812139bc52188b74bb30414227e97d0e, type: 3}
       propertyPath: enemyPool.Array.data[1]
       value: 
       objectReference: {fileID: 3454166132112533601, guid: 18e85737309ef4e4992f0b69518e93d1, type: 3}

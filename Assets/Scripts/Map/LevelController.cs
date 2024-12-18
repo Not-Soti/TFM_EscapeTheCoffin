@@ -85,13 +85,11 @@ public class LevelController : MonoBehaviour
     }
 
     private void unlockMagicWand(){
-        Debug.Log("STM - LevelController::unlockMagicWand");
         var storage = new UnlockablesStorage();
         storage.unlockMagicWand();
     }
 
     private bool getIsMagicWandUnlocked(){
-        Debug.Log("STM - LevelController::getIsMagicWandUnlocked");
         var storage = new UnlockablesStorage();
         return storage.getIsMagicWandUnlocked();
     }

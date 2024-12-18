@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,7 +46,7 @@ public class MapController : MonoBehaviour
 
         Debug.LogFormat("MapController::Start - Creating map from a pool of {0} different rooms.", availableRooms.Count);
 
-        Room initialRoom = availableRooms.ElementAt(Random.Range(0, availableRooms.Count));
+        Room initialRoom = availableRooms.ElementAt(UnityEngine.Random.Range(0, availableRooms.Count));
         GameObject initialRoomGameObject = Instantiate(initialRoom.prefab, new Vector3(0, 0, 0), Quaternion.identity);
         initialRoom.setPrefab(initialRoomGameObject);
         Vector2Int initialRoomPosition = new Vector2Int(0, 0);
@@ -66,85 +67,69 @@ public class MapController : MonoBehaviour
         Repeat the process until getting a tree with @param generatingDeepness levels.
     */
     void instantiateRooms(Room currentRoom, Vector2Int currentRoomPositionInMap, int remainingDeepness)
-    {
-        if(remainingDeepness <= 0)
-        {
-            return;
-        }
-
-        foreach(Room.DoorDirection direction in currentRoom.getAvailableDirections())
-        {
-            Room newRoom = getMatchingRoom(direction, remainingDeepness);   
-
-            Vector2Int newRoomPositionInMap = currentRoomPositionInMap;
-            switch(direction) {
-                case Room.DoorDirection.Left: 
-                    newRoomPositionInMap += new Vector2Int(-1, 0);
-                    break;
-                case Room.DoorDirection.Top: 
-                    newRoomPositionInMap += new Vector2Int(0, 1);
-                    break;
-                case Room.DoorDirection.Right:
-                    newRoomPositionInMap += new Vector2Int(1, 0);
-                    break;
-                case Room.DoorDirection.Bottom: 
-                    newRoomPositionInMap += new Vector2Int(0, -1);
-                    break;
-                default: 
-                    throw new System.ArgumentOutOfRangeException(nameof(direction), $"Invalid DoorDirection value: {direction}");
+    { 
+        try {
+            if(remainingDeepness <= 0)
+            {
+                return;
             }
+            
+            foreach(Room.DoorDirection direction in currentRoom.getAvailableDirections())
+            {
+                Room newRoom = getMatchingRoom(direction, remainingDeepness);   
 
-            if(placedRooms.ContainsKey(newRoomPositionInMap)){
-                //Skip placing a room in the same spot
-                continue;
-            } else {
-                Debug.Log("instantiateRooms: ______________________________________________");
-                Debug.LogFormat("instantiateRooms: for room {0} - Room {1}", newRoomPositionInMap, newRoom.ToString());
-                Debug.LogFormat("instantiateRooms: Positioning room in {0}", newRoomPositionInMap);
-                Debug.LogFormat("instantiateRooms: Current rooms:");
-                foreach(Vector2 pos in placedRooms.Keys){
-                    Debug.LogFormat("instantiateRooms: {0}", pos);
+                Vector2Int newRoomPositionInMap = currentRoomPositionInMap;
+                switch(direction) {
+                    case Room.DoorDirection.Left: 
+                        newRoomPositionInMap += new Vector2Int(-1, 0);
+                        break;
+                    case Room.DoorDirection.Top: 
+                        newRoomPositionInMap += new Vector2Int(0, 1);
+                        break;
+                    case Room.DoorDirection.Right:
+                        newRoomPositionInMap += new Vector2Int(1, 0);
+                        break;
+                    case Room.DoorDirection.Bottom: 
+                        newRoomPositionInMap += new Vector2Int(0, -1);
+                        break;
+                    default: 
+                        throw new System.ArgumentOutOfRangeException(nameof(direction), $"Invalid DoorDirection value: {direction}");
                 }
-                Debug.Log("instantiateRooms: ______________________________________________");
-                placedRooms[newRoomPositionInMap] = newRoom;
+                
+
+                if(placedRooms.ContainsKey(newRoomPositionInMap)){
+                    //Skip placing a room in the same spot
+                    continue;
+                } else {
+                    placedRooms[newRoomPositionInMap] = newRoom;
+                }
+
+                GameObject newRoomPrefab = Instantiate(newRoom.prefab, new Vector3(0,0,0), Quaternion.identity);
+                newRoom.setPrefab(newRoomPrefab);
+
+                GameObject currentRoomExitDoor = currentRoom.prefab.transform.Find(Room.GetDoorNameFromDirection(direction)).gameObject;
+                GameObject newRoomEntryDoor = newRoom.prefab.transform.Find(Room.GetDoorNameFromDirection(Room.GetOppositeDirection(direction))).gameObject;
+
+                Vector3 currentRoomDistanceCenterToExitDoor = currentRoom.prefab.transform.position - currentRoomExitDoor.transform.position;
+                Vector3 newRoomDistanceCenterToEntryDoor = newRoom.prefab.transform.position - newRoomEntryDoor.transform.position;
+
+                //TODO - Use half of current room size +- half of new room size, so it's more flexible to multiple room sizes
+                Vector3 roomSize = newRoom.prefab.transform.Find("Grid").Find("wall").GetComponent<CompositeCollider2D>().bounds.size;
+                Vector3 newRoomPosition = 
+                    new Vector2(
+                        newRoomPositionInMap.x * roomSize.x,
+                        newRoomPositionInMap.y * roomSize.y
+                    );
+
+                newRoom.prefab.transform.position = newRoomPosition;
+
+                instantiateEnemies(newRoom);
+
+                instantiateRooms(newRoom, newRoomPositionInMap, remainingDeepness - 1);
             }
-
-
-
-            GameObject newRoomPrefab = Instantiate(newRoom.prefab, new Vector3(0,0,0), Quaternion.identity);
-            newRoom.setPrefab(newRoomPrefab);
-
-            GameObject currentRoomExitDoor = currentRoom.prefab.transform.Find(Room.GetDoorNameFromDirection(direction)).gameObject;
-            GameObject newRoomEntryDoor = newRoom.prefab.transform.Find(Room.GetDoorNameFromDirection(Room.GetOppositeDirection(direction))).gameObject;
-
-            Vector3 currentRoomDistanceCenterToExitDoor = currentRoom.prefab.transform.position - currentRoomExitDoor.transform.position;
-            Vector3 newRoomDistanceCenterToEntryDoor = newRoom.prefab.transform.position - newRoomEntryDoor.transform.position;
-
-            float newRoomX = Mathf.Abs(currentRoomDistanceCenterToExitDoor.x) + Mathf.Abs(newRoomDistanceCenterToEntryDoor.x);
-            if(direction == Room.DoorDirection.Left){
-                newRoomX *= -1;
-            }
-
-            float newRoomY = Mathf.Abs(currentRoomDistanceCenterToExitDoor.y) + Mathf.Abs(newRoomDistanceCenterToEntryDoor.y);
-            if(direction == Room.DoorDirection.Bottom){
-                newRoomY *= -1;
-            }
-
-
-            Vector3 newRoomPosition = 
-                new Vector3(
-                    newRoomX,
-                    newRoomY,
-                    0
-                ) + currentRoom.prefab.transform.position;
-
-            newRoom.prefab.transform.position = newRoomPosition;
-
-            instantiateEnemies(newRoom);
-
-            instantiateRooms(newRoom, newRoomPositionInMap, remainingDeepness - 1);
+        } catch (Exception e){
+            Debug.LogErrorFormat("MapController:instantiateRooms - {0}", e.ToString());
         }
-
     }
 
     /**
@@ -180,7 +165,7 @@ public class MapController : MonoBehaviour
             
         } else {
             List<Room> matchingRooms = availableRooms.Where(room => room.getAvailableDirections().Contains(Room.GetOppositeDirection(entryDirection))).ToList();
-            return matchingRooms.ElementAt(Random.Range(0, matchingRooms.Count));
+            return matchingRooms.ElementAt(UnityEngine.Random.Range(0, matchingRooms.Count));
         }
     }
 
@@ -197,10 +182,10 @@ public class MapController : MonoBehaviour
         
         Room exitRoom = null;
         if(edgeRooms.Count > 0){
-            exitRoom = edgeRooms.ElementAt(Random.Range(0, edgeRooms.Count));
+            exitRoom = edgeRooms.ElementAt(UnityEngine.Random.Range(0, edgeRooms.Count));
         } else {
             do {
-                exitRoom = placedRooms.ElementAt(Random.Range(0, placedRooms.Count)).Value;
+                exitRoom = placedRooms.ElementAt(UnityEngine.Random.Range(0, placedRooms.Count)).Value;
             } while (exitRoom == placedRooms.ElementAt(0).Value);
         }
 
@@ -209,13 +194,13 @@ public class MapController : MonoBehaviour
     }
 
     private void instantiateEnemies(Room room){
-        int enemiesInRoom = Random.Range(1, maxEnemiesInRoom);
+        int enemiesInRoom = UnityEngine.Random.Range(1, maxEnemiesInRoom+1);
         for(int i = 0; i < enemiesInRoom; i++){
-            GameObject enemy = enemyPool.ElementAt(Random.Range(0, enemyPool.Count));
+            GameObject enemy = enemyPool.ElementAt(UnityEngine.Random.Range(0, enemyPool.Count));
             
             var roomPosition = room.prefab.transform.position;
-            var enemyX = room.prefab.transform.position.x + Random.Range(-10, 10);
-            var enemyY = room.prefab.transform.position.y + Random.Range(-5, 5);
+            var enemyX = room.prefab.transform.position.x + UnityEngine.Random.Range(-5, 5);
+            var enemyY = room.prefab.transform.position.y + UnityEngine.Random.Range(-3, 3);
             var enemyPosition = new Vector3(enemyX, enemyY, 0);
             GameObject instance = Instantiate(enemy, enemyPosition, Quaternion.identity);
             
