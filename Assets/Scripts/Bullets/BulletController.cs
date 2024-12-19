@@ -41,9 +41,10 @@ public class BulletController : MonoBehaviour {
             this.transform.position = shooterPosition;
             
             Vector3 direction = targetPosition - shooterPosition;
-            if(direction.x < 1){
-                transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
-            }
+            
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            this.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            
             rigidBody.velocity = bulletSpeed *  direction.normalized; 
         } else {
             //Straight shoot
