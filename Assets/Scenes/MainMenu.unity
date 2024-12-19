@@ -200,6 +200,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &69024204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69024200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc7ccec9b3b6e343a9068e817e33029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuController: {fileID: 816445594}
 --- !u!1 &194784813
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +577,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1948936373}
+      - m_Target: {fileID: 816445597}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
         m_MethodName: OnPlayButtonTapped
         m_Mode: 1
@@ -697,7 +710,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1948936373}
+      - m_Target: {fileID: 816445597}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
         m_MethodName: OnClearDataTapped
         m_Mode: 1
@@ -883,6 +896,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644425551}
   m_CullTransparentMesh: 1
+--- !u!1 &816445594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 816445596}
+  - component: {fileID: 816445597}
+  m_Layer: 0
+  m_Name: MainMenuController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &816445596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816445594}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.2775786, y: 0.82359976, z: -1.4370716}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &816445597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816445594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea29fbd412775c3459cb06d5b523bf16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeleton: {fileID: 69024200}
+  undertaker: {fileID: 2084563100345518139}
+  mainMenu: {fileID: 1948936371}
 --- !u!1 &899848291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1163,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1948936373}
+      - m_Target: {fileID: 816445597}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
         m_MethodName: OnExitButtonTapped
         m_Mode: 1
@@ -1303,6 +1363,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea29fbd412775c3459cb06d5b523bf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skeleton: {fileID: 0}
+  undertaker: {fileID: 0}
+  mainMenu: {fileID: 0}
 --- !u!1 &1318574176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,7 +1992,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1948936372}
-  - component: {fileID: 1948936373}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1955,18 +2017,6 @@ Transform:
   - {fileID: 1217516680}
   m_Father: {fileID: 1224053052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1948936373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948936371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea29fbd412775c3459cb06d5b523bf16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2007013234
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,6 +2232,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2230165684937299539, guid: d10529a4431adeb4196ffd3ff963a5ab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2084563100345518141}
+    - targetCorrespondingSourceObject: {fileID: 2230165684937299539, guid: d10529a4431adeb4196ffd3ff963a5ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2084563100345518142}
   m_SourcePrefab: {fileID: 100100000, guid: d10529a4431adeb4196ffd3ff963a5ab, type: 3}
 --- !u!1 &2084563100345518139 stripped
 GameObject:
@@ -2214,6 +2267,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2084563100345518142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084563100345518139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6871f4777fa06e449a7cb99e88374259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuController: {fileID: 816445594}
 --- !u!1001 &6754706707718654253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2400,6 +2466,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8523293674919724528, guid: fb45c653cca432c43940518ec9ea597a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 69024203}
+    - targetCorrespondingSourceObject: {fileID: 8523293674919724528, guid: fb45c653cca432c43940518ec9ea597a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 69024204}
   m_SourcePrefab: {fileID: 100100000, guid: fb45c653cca432c43940518ec9ea597a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -2410,3 +2479,4 @@ SceneRoots:
   - {fileID: 1417455658}
   - {fileID: 6754706707718654253}
   - {fileID: 2084563100345518138}
+  - {fileID: 816445596}
