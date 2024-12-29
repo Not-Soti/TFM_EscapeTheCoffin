@@ -64,7 +64,8 @@ MonoBehaviour:
   - {fileID: 4708043183386204833, guid: 597495fdd2c10e04e94b0bf0f0acc5db, type: 3}
   roomGeneratingDeepness: 2
   roomPrefabResourceFolder: Level1
-  finishLevelBeaconPrefab: {fileID: 1742064348937001276, guid: 04ed84b28571c334aa8f4411fa83fa1a, type: 3}
+  finishLevelBeaconPrefab: {fileID: 4759765138433806197, guid: d054bc549a937874b98123e508f25dcf, type: 3}
+  maxEnemiesInRoom: 0
   enemyPool:
   - {fileID: 7302261648969446801, guid: 8638503e893850741af5d2b3b4d1abcb, type: 3}
 --- !u!114 &4040247811779290774
