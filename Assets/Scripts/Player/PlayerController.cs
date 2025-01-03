@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour, IBulletTarget
     private int currentHealth;
 
     public Joystick movementJoystick;
+    private bool isJoystickFloating;
 
     public GameObject idlePrefab;
     public GameObject runningPrefab;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour, IBulletTarget
         rigidBody = GetComponent<Rigidbody2D>(); 
         animator = GetComponent<Animator>();
         closestEnemy = null;
+        isJoystickFloating = false;
 
         idlePrefab.SetActive(true);
         runningPrefab.SetActive(false);
@@ -37,6 +39,12 @@ public class PlayerController : MonoBehaviour, IBulletTarget
     void Update(){
         Vector2 inputDirection = movementJoystick.Direction;
         if(inputDirection != new Vector2(0f, 0f)){
+            var variableJoystick = (movementJoystick as VariableJoystick);
+            if(variableJoystick != null && !isJoystickFloating){
+                variableJoystick.SetMode(JoystickType.Floating);
+                isJoystickFloating = true;  
+            }
+            
 
             idlePrefab.SetActive(false);
             runningPrefab.SetActive(true);

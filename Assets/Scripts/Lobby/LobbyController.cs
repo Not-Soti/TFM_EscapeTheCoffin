@@ -9,11 +9,13 @@ public class LobbyController : MonoBehaviour
 
     public GameObject openDoor;
     public GameObject closedDoor;
+    public Joystick movementJoystick;
 
     void Start(){
         openDoor.SetActive(false);
         closedDoor.SetActive(true);
         activateUnlockedWeapons();
+        (movementJoystick as VariableJoystick).SetMode(JoystickType.Fixed);
     }
 
     private void activateUnlockedWeapons(){
