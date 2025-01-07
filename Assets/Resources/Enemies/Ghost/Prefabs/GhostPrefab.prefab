@@ -136,7 +136,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6217928344663560064, guid: d0662ecc0da5cc140bf39dc942dbe192, type: 3}
   bulletSpeed: 15
   targetMark: {fileID: 1018403681294330126}
-  maxHealth: 1
+  maxHealth: 4
 --- !u!1001 &704205446371674291
 PrefabInstance:
   m_ObjectHideFlags: 0

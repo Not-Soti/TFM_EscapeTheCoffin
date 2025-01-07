@@ -100,6 +100,8 @@ public class EnemyController : MonoBehaviour, IBulletTarget
     }
 
     public void onShootReceived() {
+         StartCoroutine(BlinkRed());
+
         this.currentHealth--;
         if(currentHealth <= 0){
             GameObject map = GameObject.Find("Map");
@@ -114,6 +116,24 @@ public class EnemyController : MonoBehaviour, IBulletTarget
                 Destroy(bullet);
             }
             Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator BlinkRed()
+    {  
+        SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        var originalColor = spriteRenderers[0].color;
+
+        foreach (var sr in spriteRenderers)
+        {
+            sr.color = Color.red;
+        }
+
+        yield return new WaitForSeconds(0.1f);
+
+        foreach (var sr in spriteRenderers)
+        {
+            sr.color = originalColor;
         }
     }
 

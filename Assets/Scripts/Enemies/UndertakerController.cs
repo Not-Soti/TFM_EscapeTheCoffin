@@ -7,7 +7,7 @@ public class UndertakerController : EnemyController
 
     protected override void performAction() {
         float now = Time.time;
-        float timeOut = Random.Range(2, 5);
+        float timeOut = Random.Range(1, 3);
 
         //More % of attacking than a common enemy
         if(now > (lastMovementTimeSeconds + timeOut)) {
